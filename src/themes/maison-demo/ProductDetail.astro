@@ -6,17 +6,16 @@ import ProductPurchaseForm from '../../features/storefront/controls/ProductPurch
 import { t } from '../../features/i18n';
 
 /**
- * STORE-OWNED. Edit freely — this file belongs to your store.
+ * Maison Démo — la fiche produit.
  *
- * Composition only. Every price, URL, availability flag, and image on `model`
- * is already resolved; the route owns the 404, the metadata, and the JSON-LD.
+ * À gauche, les photographies en grand, côte à côte sur grand écran ; à
+ * droite, une colonne qui reste en place pendant qu'on les regarde : le nom,
+ * le prix, la taille, le bouton, puis ce qu'on veut savoir avant d'acheter.
  *
- * Keep <ProductGallery> and <ProductPurchaseForm>. The gallery owns the anchors
- * the variant selector scrolls to and the LCP treatment on the first frame; the
- * purchase form owns the field names, the sold-out states, and `data-fullpage`,
- * without which Buy now is captured by the cart drawer instead of navigating.
- *
- * See CUSTOMIZING.md for the full contract.
+ * <ProductGallery> et <ProductPurchaseForm> sont gardés tels quels : la
+ * galerie porte les ancres et le traitement LCP, le formulaire porte les noms
+ * de champs, les états épuisés et `data-fullpage`. tokens.css ne fait que les
+ * remettre en forme (format 2:3, cases de taille, boutons pleine largeur).
  */
 interface Props {
   model: ProductDetailModel;
@@ -24,106 +23,137 @@ interface Props {
 }
 
 const { model, purchase } = Astro.props;
+const wearable = purchase.variants.length > 0 && /taille/i.test(purchase.variantLabel ?? '');
 ---
 
-<a href={model.backHref} class="text-xs uppercase tracking-widest text-faint hover:text-brand">
-  &larr; {t('product.backToShop')}
-</a>
+<nav aria-label="Fil d’Ariane" class="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.8125rem] text-muted">
+  <a href={model.backHref} class="hover:text-ink">{t('shell.nav.store')}</a>
+  {
+    model.categories.map((category) => (
+      <span class="flex items-center gap-x-2">
+        <span aria-hidden="true" class="text-line">/</span>
+        <a href={category.href} class="hover:text-ink">
+          {category.text}
+        </a>
+      </span>
+    ))
+  }
+</nav>
 
 {
   model.error && (
-    <p class="mt-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+    <p role="alert" class="mb-6 border border-brand/30 bg-brand/5 px-4 py-3 text-[0.875rem] text-brand">
       {model.error}
     </p>
   )
 }
 
+<div class="grid gap-8 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+  <ProductGallery images={model.images} hero={model.heroImage} soldOut={model.soldOut} class="lg:col-span-7 xl:col-span-8" />
 
-<div class="mt-6 grid gap-10 md:grid-cols-2 md:gap-16">
-  <ProductGallery
-    images={model.images}
-    hero={model.heroImage}
-    soldOut={model.soldOut}
-    class="reveal"
-  />
-
-  <div class="reveal flex flex-col" style="animation-delay:90ms">
-    {
-      model.categories.length > 0 && (
-        <div class="mb-4 flex flex-wrap gap-x-4 gap-y-1 text-xs uppercase tracking-widest text-faint">
-          {model.categories.map((category) => (
-            <a href={category.href} class="hover:text-brand">
-              {category.text}
-            </a>
-          ))}
-        </div>
-      )
-    }
-
-    <h1 class="font-serif text-4xl tracking-tight">{model.name}</h1>
-    {model.digitalDelivery && <p class="mt-2 text-xs uppercase tracking-widest text-brand">{t('product.digitalDelivery')}</p>}
-    <p
-      class="mt-4 text-2xl tabular-nums text-muted"
-      data-price-display
-      data-base={model.priceCents}
-      data-currency={model.currency}
-    >
-      {model.priceVaries && <span class="text-base text-faint">{t('product.priceFrom')}</span>}
-      {model.formattedPrice}
-    </p>
-    {
-      /* data-low-stock is the contract, not the wording. Reword or restyle it
-         freely; keep the marker so scarcity stays distinguishable from normal
-         availability without pinning copy. */
-      model.lowStock && (
-        <p data-low-stock class="mt-2 text-sm text-amber-700">
-          {t('product.lowStock')}
-        </p>
-      )
-    }
-    {
-      model.descriptionHtml && (
-        <div class="markdown-content mt-6 max-w-prose text-muted" set:html={model.descriptionHtml} />
-      )
-    }
-
-    <ProductPurchaseForm model={purchase} />
-
-    {/* Share — hidden until JS confirms the browser can share or copy. Uses the
-        Web Share API (mobile/native sheet) with a clipboard-copy fallback. */}
-    <button
-      type="button"
-      data-share
-      data-share-title={model.name}
-      class="mt-6 hidden w-fit items-center gap-2 text-xs uppercase tracking-widest text-faint transition hover:text-brand"
-    >
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
+  <div class="lg:col-span-5 xl:col-span-4">
+    <div class="lg:sticky lg:top-28">
+      <h1 class="md-title text-[clamp(1.625rem,2.4vw,2.125rem)] text-ink">{model.name}</h1>
+      {model.digitalDelivery && <p class="mt-2 text-[0.8125rem] text-brand">{t('product.digitalDelivery')}</p>}
+      <p
+        class="mt-3 text-[1.125rem] tabular-nums text-ink"
+        data-price-display
+        data-base={model.priceCents}
+        data-currency={model.currency}
       >
-        <circle cx="18" cy="5" r="3" />
-        <circle cx="6" cy="12" r="3" />
-        <circle cx="18" cy="19" r="3" />
-        <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
-        <line x1="15.4" y1="6.5" x2="8.6" y2="10.5" />
-      </svg>
-      <span data-share-label>{t('product.share')}</span>
-    </button>
+        {model.priceVaries && <span class="text-[0.9375rem] text-muted">{t('product.priceFrom')}</span>}
+        {model.formattedPrice}
+      </p>
+      <p class="mt-1 text-[0.8125rem] text-muted">TVA incluse, livraison calculée à l’étape suivante.</p>
+
+      {
+        model.lowStock && (
+          <p data-low-stock class="mt-4 flex items-center gap-2 text-[0.875rem] font-medium text-brand">
+            <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-brand" />
+            Plus que quelques pièces disponibles.
+          </p>
+        )
+      }
+
+      <div class="md-purchase">
+        <ProductPurchaseForm model={purchase} />
+      </div>
+
+      {
+        wearable && (
+          <a href="/pages/guide-des-tailles" class="md-link mt-4 inline-block text-[0.8125rem] text-muted hover:text-ink">
+            Guide des tailles
+          </a>
+        )
+      }
+
+      <ul class="mt-8 space-y-2.5 border-t border-line pt-6 text-[0.8125rem] text-muted">
+        <li class="flex gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="mt-0.5 shrink-0 text-ink"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" /></svg>
+          Expédié sous 24 h ouvrées, livraison offerte dès 150 €.
+        </li>
+        <li class="flex gap-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="mt-0.5 shrink-0 text-ink"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" /></svg>
+          Retours gratuits sous 30 jours.
+        </li>
+      </ul>
+
+      {
+        model.descriptionHtml && (
+          <details open class="md-details mt-6 border-t border-line pt-5">
+            <summary class="flex list-none items-center justify-between text-[0.875rem] font-semibold text-ink">
+              {t('product.details')}
+              <span aria-hidden="true" class="md-details-mark" />
+            </summary>
+            <div class="markdown-content md-product-copy mt-4 text-[0.875rem]" set:html={model.descriptionHtml} />
+          </details>
+        )
+      }
+
+      <details class="md-details mt-5 border-t border-line pt-5">
+        <summary class="flex list-none items-center justify-between text-[0.875rem] font-semibold text-ink">
+          Livraison et retours
+          <span aria-hidden="true" class="md-details-mark" />
+        </summary>
+        <div class="mt-4 space-y-3 text-[0.875rem] leading-relaxed text-muted">
+          <p>
+            Livraison en France métropolitaine par Colissimo suivi, en 48 à 72 h ouvrées : 5,90 €, offerte dès 150 € d’achat.
+            Livraison express en 24 h : 12,90 €.
+          </p>
+          <p>
+            Vous disposez de 30 jours pour nous retourner un article non porté, dans son emballage d’origine. Le retour est
+            gratuit et le remboursement intervient sous 5 jours après réception.
+          </p>
+          <a href="/pages/livraison-et-retours" class="md-link text-ink">Toutes les conditions</a>
+        </div>
+      </details>
+
+      <button
+        type="button"
+        data-share
+        data-share-title={model.name}
+        class="mt-6 hidden w-fit items-center gap-2 border-t border-transparent text-[0.8125rem] text-muted transition-colors hover:text-ink"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="18" cy="5" r="3" />
+          <circle cx="6" cy="12" r="3" />
+          <circle cx="18" cy="19" r="3" />
+          <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
+          <line x1="15.4" y1="6.5" x2="8.6" y2="10.5" />
+        </svg>
+        <span data-share-label>{t('product.share')}</span>
+      </button>
+    </div>
   </div>
 </div>
 
 {
   model.related.length > 0 && (
-    <section class="mt-20 border-t border-line pt-12">
-      <h2 class="mb-8 text-xs uppercase tracking-[0.25em] text-faint">{t('product.related')}</h2>
-      <ul class="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
+    <section class="mt-24 sm:mt-32" aria-labelledby="md-related">
+      <h2 id="md-related" class="md-title mb-7 text-[clamp(1.5rem,2.6vw,2.125rem)] text-ink">
+        {t('product.related')}
+      </h2>
+      <ul class="grid grid-cols-2 gap-x-2 gap-y-10 lg:grid-cols-4">
         {model.related.map((card, i) => (
           <ProductCard card={card} index={i} headingLevel="h3" />
         ))}

@@ -1,0 +1,605 @@
+sku,product,name,slug,description,variant_group,variant,price,stock,weight_grams,requires_shipping,active,categories,images
+MD-F01-XS,MD-F01,Manteau long en laine et cachemire,,"Un manteau long à la ligne nette, coupé dans un drap de laine et cachemire au toucher dense et chaud. Col tailleur, trois boutons en corne, deux poches passepoilées : l’essentiel, sans rien de trop.
+
+- Drap 90 % laine vierge, 10 % cachemire, tissé en Italie
+- Doublure 100 % cupro
+- Coupe droite, longueur mi-mollet
+- Coloris camel
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,76 m et porte une taille S. Coupe ajustée aux épaules, prenez votre taille habituelle.
+
+**Entretien :** nettoyage à sec uniquement. Brossez dans le sens du tissage et suspendez sur un cintre large.",Taille,XS,349.00,0,1650,oui,oui,femme|femme-manteaux-vestes,photos/md-f01-1.webp|photos/md-f01-2.webp
+MD-F01-S,MD-F01,,,,,S,349.00,4,1650,,,,
+MD-F01-M,MD-F01,,,,,M,349.00,6,1650,,,,
+MD-F01-L,MD-F01,,,,,L,349.00,3,1650,,,,
+MD-F01-XL,MD-F01,,,,,XL,349.00,2,1650,,,,
+MD-F02-XS,MD-F02,Trench en gabardine de coton,,"Le trench tel qu’on l’aime : double boutonnage, épaulettes, ceinture à boucle gainée et patte de pluie au dos. La gabardine de coton serrée laisse passer l’air et arrête les averses de mi-saison.
+
+- Gabardine 100 % coton, traitement déperlant sans PFC
+- Doublure partielle en coton rayé
+- Coupe légèrement ample, longueur sous le genou
+- Coloris sable
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,75 m et porte une taille S. Coupe ample, vous pouvez prendre une taille en dessous pour un tombé plus près du corps.
+
+**Entretien :** lavage en machine à 30 °C, programme délicat. Repassage doux sur l’envers.",Taille,XS,289.00,3,1200,oui,oui,femme|femme-manteaux-vestes,photos/md-f02-1.webp|photos/md-f02-2.webp
+MD-F02-S,MD-F02,,,,,S,289.00,5,1200,,,,
+MD-F02-M,MD-F02,,,,,M,289.00,7,1200,,,,
+MD-F02-L,MD-F02,,,,,L,289.00,4,1200,,,,
+MD-F02-XL,MD-F02,,,,,XL,289.00,2,1200,,,,
+MD-F03-XS,MD-F03,Blazer croisé en laine,,"Un blazer croisé aux épaules nettes, taillé dans une toile de laine fluide. Il se porte fermé comme une veste de tailleur ou ouvert sur un t-shirt, avec un jean comme avec le pantalon assorti.
+
+- Toile 100 % laine vierge, tissée en Italie
+- Doublure 100 % viscose
+- Fermeture croisée, six boutons
+- Coloris noir
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,77 m et porte une taille S. Coupe droite et légèrement allongée.
+
+**Entretien :** nettoyage à sec.",Taille,XS,245.00,2,850,oui,oui,femme|femme-manteaux-vestes,photos/md-f03-1.webp|photos/md-f03-2.webp
+MD-F03-S,MD-F03,,,,,S,245.00,5,850,,,,
+MD-F03-M,MD-F03,,,,,M,245.00,6,850,,,,
+MD-F03-L,MD-F03,,,,,L,245.00,4,850,,,,
+MD-F03-XL,MD-F03,,,,,XL,245.00,1,850,,,,
+MD-F04-XS,MD-F04,Pull col roulé en cachemire,,"Un col roulé en pur cachemire, tricoté en jauge fine pour se glisser sous un manteau comme sous un blazer. Le genre de pièce qu’on garde dix ans.
+
+- 100 % cachemire de Mongolie intérieure, filé en Écosse
+- Maille jersey jauge 12, bords côtes
+- Coupe près du corps
+- Coloris gris chiné clair
+- Tricoté en Italie
+
+**Taille et coupe :** la mannequin mesure 1,76 m et porte une taille S.
+
+**Entretien :** lavage à la main à l’eau froide avec un savon doux, séchage à plat. Le cachemire peloche légèrement les premières semaines : un passage au peigne à cachemire suffit.",Taille,XS,179.00,4,380,oui,oui,femme|femme-mailles,photos/md-f04-1.webp|photos/md-f04-2.webp
+MD-F04-S,MD-F04,,,,,S,179.00,8,380,,,,
+MD-F04-M,MD-F04,,,,,M,179.00,9,380,,,,
+MD-F04-L,MD-F04,,,,,L,179.00,5,380,,,,
+MD-F05-XS,MD-F05,Cardigan en mérinos côtelé,,"Un cardigan court en maille côtelée de laine mérinos, boutonné de nacre. Il se porte seul, boutonné jusqu’en haut, ou ouvert sur une marinière.
+
+- 100 % laine mérinos extra-fine
+- Maille côtes 2/2
+- Boutons en nacre véritable
+- Coloris écru
+- Tricoté au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,74 m et porte une taille S. Coupe courte et près du corps.
+
+**Entretien :** lavage en machine à 30 °C programme laine, séchage à plat.",Taille,XS,129.00,3,420,oui,oui,femme|femme-mailles,photos/md-f05-1.webp|photos/md-f05-2.webp
+MD-F05-S,MD-F05,,,,,S,129.00,6,420,,,,
+MD-F05-M,MD-F05,,,,,M,129.00,7,420,,,,
+MD-F05-L,MD-F05,,,,,L,129.00,4,420,,,,
+MD-F06-XS,MD-F06,Marinière en coton épais,,"La marinière dans sa version la plus fidèle : un jersey de coton épais qui se tient, des rayures tissées et non imprimées, un col bateau qui dégage les épaules.
+
+- Jersey 100 % coton peigné, 260 g/m²
+- Rayures tissées écru et marine
+- Col bateau, manches longues
+- Fabriquée en France
+
+**Taille et coupe :** la mannequin mesure 1,75 m et porte une taille S. Coupe droite, légèrement ample.
+
+**Entretien :** lavage en machine à 30 °C. Le coton épais se détend un peu au porter et retrouve sa tenue au lavage.",Taille,XS,69.00,6,320,oui,oui,femme|femme-chemises-tops,photos/md-f06-1.webp|photos/md-f06-2.webp
+MD-F06-S,MD-F06,,,,,S,69.00,10,320,,,,
+MD-F06-M,MD-F06,,,,,M,69.00,12,320,,,,
+MD-F06-L,MD-F06,,,,,L,69.00,8,320,,,,
+MD-F06-XL,MD-F06,,,,,XL,69.00,5,320,,,,
+MD-F07-XS,MD-F07,Chemise oversize en popeline,,"Une chemise blanche ample, à porter rentrée ou flottante. La popeline de coton est assez dense pour ne pas être transparente et assez souple pour se froisser joliment.
+
+- Popeline 100 % coton biologique
+- Col classique, patte boutonnée cachée
+- Poignets mousquetaire à deux boutons
+- Coloris blanc
+- Fabriquée au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,76 m et porte une taille S. Coupe oversize : prenez une taille en dessous pour un effet plus ajusté.
+
+**Entretien :** lavage en machine à 40 °C, repassage à fer chaud.",Taille,XS,89.00,4,280,oui,oui,femme|femme-chemises-tops,photos/md-f07-1.webp|photos/md-f07-2.webp
+MD-F07-S,MD-F07,,,,,S,89.00,7,280,,,,
+MD-F07-M,MD-F07,,,,,M,89.00,8,280,,,,
+MD-F07-L,MD-F07,,,,,L,89.00,5,280,,,,
+MD-F08-XS,MD-F08,Blouse en soie lavée,,"Une blouse fluide en soie lavée, au tombé mat et velouté. Col cheminée noué, manches longues resserrées aux poignets : elle passe du bureau au dîner sans changer de tenue.
+
+- 100 % soie lavée, 19 mommes
+- Col lavallière amovible
+- Coloris bleu nuit
+- Fabriquée au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,74 m et porte une taille S. Coupe droite, légèrement ample.
+
+**Entretien :** lavage à la main à l’eau froide ou nettoyage à sec. Repassage doux sur l’envers.",Taille,XS,139.00,2,220,oui,oui,femme|femme-chemises-tops,photos/md-f08-1.webp|photos/md-f08-2.webp
+MD-F08-S,MD-F08,,,,,S,139.00,5,220,,,,
+MD-F08-M,MD-F08,,,,,M,139.00,5,220,,,,
+MD-F08-L,MD-F08,,,,,L,139.00,3,220,,,,
+MD-F09-XS,MD-F09,Robe midi en crêpe,,"Une robe noire qui se passe de commentaire : encolure ronde, manches longues, taille marquée et jupe évasée qui tombe à mi-mollet. Le crêpe ne froisse pas et suit le mouvement.
+
+- Crêpe 100 % polyester recyclé
+- Doublure de la jupe en viscose
+- Fermeture à glissière invisible au dos
+- Coloris noir
+- Fabriquée au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,77 m et porte une taille S. Coupe ajustée à la taille.
+
+**Entretien :** lavage en machine à 30 °C, programme délicat.",Taille,XS,159.00,3,450,oui,oui,femme|femme-robes-jupes,photos/md-f09-1.webp|photos/md-f09-2.webp
+MD-F09-S,MD-F09,,,,,S,159.00,6,450,,,,
+MD-F09-M,MD-F09,,,,,M,159.00,6,450,,,,
+MD-F09-L,MD-F09,,,,,L,159.00,3,450,,,,
+MD-F10-XS,MD-F10,Robe chemise en lin lavé,,"Une robe chemise en lin lavé, ceinturée à la taille par un lien du même tissu. Le lin, lavé en pièce, est souple dès le premier porter.
+
+- 100 % lin européen, lavé en pièce
+- Col chemise, boutonnage complet
+- Ceinture à nouer amovible
+- Coloris vert sauge
+- Fabriquée au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,75 m et porte une taille S. Coupe droite, longueur mi-mollet.
+
+**Entretien :** lavage en machine à 30 °C. Le lin se porte légèrement froissé ; repassez-le humide pour un aspect net.",Taille,XS,135.00,2,400,oui,oui,femme|femme-robes-jupes,photos/md-f10-1.webp|photos/md-f10-2.webp
+MD-F10-S,MD-F10,,,,,S,135.00,4,400,,,,
+MD-F10-M,MD-F10,,,,,M,135.00,5,400,,,,
+MD-F10-L,MD-F10,,,,,L,135.00,3,400,,,,
+MD-F11-XS,MD-F11,Jupe plissée midi,,"Une jupe aux plis fins et permanents, qui bouge à chaque pas. Taille élastiquée dans le dos pour le confort, longueur midi.
+
+- Satin plissé 100 % polyester recyclé
+- Taille semi-élastiquée
+- Doublure en jersey
+- Coloris chocolat
+- Fabriquée en Italie
+
+**Taille et coupe :** la mannequin mesure 1,76 m et porte une taille S.
+
+**Entretien :** lavage à la main à l’eau froide. Suspendez pour sécher, les plis reprennent leur forme seuls.",Taille,XS,119.00,0,380,oui,oui,femme|femme-robes-jupes,photos/md-f11-1.webp|photos/md-f11-2.webp
+MD-F11-S,MD-F11,,,,,S,119.00,0,380,,,,
+MD-F11-M,MD-F11,,,,,M,119.00,0,380,,,,
+MD-F11-L,MD-F11,,,,,L,119.00,0,380,,,,
+MD-F12-34,MD-F12,Jean droit taille haute,,"Un jean droit à la taille haute et à la jambe longue, coupé dans un denim brut rigide qui se patine avec vous. Cinq poches, braguette à boutons.
+
+- Denim 100 % coton, 13,5 oz, tissé au Japon
+- Délavage brut, rincé une fois
+- Taille haute, jambe droite, longueur cheville
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,76 m et porte une taille 36. Le denim rigide se détend d’environ une demi-taille au porter.
+
+**Entretien :** lavage en machine à 30 °C sur l’envers, le plus rarement possible.",Taille,34,109.00,3,650,oui,oui,femme|femme-pantalons-jeans,photos/md-f12-1.webp|photos/md-f12-2.webp
+MD-F12-36,MD-F12,,,,,36,109.00,7,650,,,,
+MD-F12-38,MD-F12,,,,,38,109.00,8,650,,,,
+MD-F12-40,MD-F12,,,,,40,109.00,5,650,,,,
+MD-F12-42,MD-F12,,,,,42,109.00,2,650,,,,
+MD-F13-34,MD-F13,Pantalon tailleur à pinces,,"Un pantalon à pinces, taille haute et jambe large, dans une flanelle de laine légère. Il se porte avec le blazer assorti ou un simple pull.
+
+- Flanelle 98 % laine vierge, 2 % élasthanne
+- Deux pinces, poches italiennes, pli marqué
+- Taille haute, jambe large
+- Coloris gris anthracite
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,77 m et porte une taille 36. Longueur pensée pour être portée avec un petit talon.
+
+**Entretien :** nettoyage à sec.",Taille,34,129.00,2,520,oui,oui,femme|femme-pantalons-jeans,photos/md-f13-1.webp|photos/md-f13-2.webp
+MD-F13-36,MD-F13,,,,,36,129.00,6,520,,,,
+MD-F13-38,MD-F13,,,,,38,129.00,7,520,,,,
+MD-F13-40,MD-F13,,,,,40,129.00,4,520,,,,
+MD-F13-42,MD-F13,,,,,42,129.00,2,520,,,,
+MD-F14-XS,MD-F14,T-shirt en coton épais,,"Le t-shirt blanc qu’on cherche longtemps : un jersey épais qui ne se déforme pas, un col rond net et des manches qui tombent juste au-dessus du coude.
+
+- Jersey 100 % coton biologique, 220 g/m²
+- Col rond en côte 1/1
+- Coupe droite, légèrement ample
+- Coloris blanc
+- Fabriqué au Portugal
+
+**Taille et coupe :** la mannequin mesure 1,75 m et porte une taille S.
+
+**Entretien :** lavage en machine à 30 °C, séchage à l’air libre.",Taille,XS,45.00,8,220,oui,oui,femme|femme-chemises-tops,photos/md-f14-1.webp|photos/md-f14-2.webp
+MD-F14-S,MD-F14,,,,,S,45.00,14,220,,,,
+MD-F14-M,MD-F14,,,,,M,45.00,15,220,,,,
+MD-F14-L,MD-F14,,,,,L,45.00,10,220,,,,
+MD-F14-XL,MD-F14,,,,,XL,45.00,6,220,,,,
+MD-H01-S,MD-H01,Caban en drap de laine,,"Le caban de la marine, dans un drap de laine dense et feutré. Double boutonnage à boutons gravés, col à revers large qui se relève contre le vent, poches manchon.
+
+- Drap 80 % laine, 20 % polyamide, 680 g/m²
+- Doublure 100 % viscose
+- Coupe droite, longueur hanche
+- Coloris marine
+- Fabriqué en France
+
+**Taille et coupe :** le mannequin mesure 1,86 m et porte une taille M. Coupe ajustée : prenez une taille au-dessus pour le porter sur un gros pull.
+
+**Entretien :** nettoyage à sec.",Taille,S,329.00,3,1800,oui,oui,homme|homme-manteaux-vestes,photos/md-h01-1.webp|photos/md-h01-2.webp
+MD-H01-M,MD-H01,,,,,M,329.00,6,1800,,,,
+MD-H01-L,MD-H01,,,,,L,329.00,5,1800,,,,
+MD-H01-XL,MD-H01,,,,,XL,329.00,3,1800,,,,
+MD-H02-S,MD-H02,Veste de travail en coton,,"La veste de travail française dans sa forme originale : trois poches plaquées, col chemise, boutons métal. Le sergé de coton prend une patine bleue magnifique au fil des lavages.
+
+- Sergé 100 % coton, teint en pièce
+- Trois poches plaquées, une poche intérieure
+- Coloris bleu de travail
+- Fabriquée en France
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille M. Coupe droite et carrée.
+
+**Entretien :** lavage en machine à 30 °C. Le coloris s’éclaircit légèrement à chaque lavage.",Taille,S,169.00,4,900,oui,oui,homme|homme-manteaux-vestes,photos/md-h02-1.webp|photos/md-h02-2.webp
+MD-H02-M,MD-H02,,,,,M,169.00,7,900,,,,
+MD-H02-L,MD-H02,,,,,L,169.00,8,900,,,,
+MD-H02-XL,MD-H02,,,,,XL,169.00,5,900,,,,
+MD-H02-XXL,MD-H02,,,,,XXL,169.00,2,900,,,,
+MD-H03-S,MD-H03,Blouson en daim,,"Un blouson court en daim velours, au col chemise et à la taille resserrée par des pattes de serrage. Le cuir, tanné en Espagne, est souple comme une étoffe.
+
+- Croûte de cuir velours de chèvre
+- Doublure 100 % cupro
+- Fermeture à glissière, deux poches à rabat
+- Coloris tabac
+- Fabriqué au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,86 m et porte une taille M.
+
+**Entretien :** confiez-le à un spécialiste du cuir. Brossez régulièrement avec une brosse à daim.",Taille,S,395.00,1,1100,oui,oui,homme|homme-manteaux-vestes,photos/md-h03-1.webp|photos/md-h03-2.webp
+MD-H03-M,MD-H03,,,,,M,395.00,3,1100,,,,
+MD-H03-L,MD-H03,,,,,L,395.00,3,1100,,,,
+MD-H03-XL,MD-H03,,,,,XL,395.00,2,1100,,,,
+MD-H04-S,MD-H04,Pull col rond en laine d’agneau,,"Un pull col rond en laine d’agneau, à la maille souple et chaude. Assez fin pour se porter sous une veste, assez dense pour se suffire à lui-même.
+
+- 100 % laine d’agneau
+- Maille jersey jauge 7, bords côtes
+- Coloris vert forêt
+- Tricoté en Écosse
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille M. Coupe droite.
+
+**Entretien :** lavage à la main ou en machine programme laine à froid. Séchage à plat.",Taille,S,119.00,5,450,oui,oui,homme|homme-mailles,photos/md-h04-1.webp|photos/md-h04-2.webp
+MD-H04-M,MD-H04,,,,,M,119.00,8,450,,,,
+MD-H04-L,MD-H04,,,,,L,119.00,9,450,,,,
+MD-H04-XL,MD-H04,,,,,XL,119.00,6,450,,,,
+MD-H04-XXL,MD-H04,,,,,XXL,119.00,3,450,,,,
+MD-H05-S,MD-H05,Pull camionneur zippé,,"Un pull camionneur en grosse maille, au col montant zippé qui se porte ouvert ou fermé. Une pièce d’hiver qui remplace volontiers une veste.
+
+- 100 % laine mérinos
+- Maille côtes anglaises
+- Zip métal, col montant
+- Coloris gris chiné
+- Tricoté au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,86 m et porte une taille M.
+
+**Entretien :** lavage à la main à l’eau froide, séchage à plat.",Taille,S,139.00,3,620,oui,oui,homme|homme-mailles,photos/md-h05-1.webp|photos/md-h05-2.webp
+MD-H05-M,MD-H05,,,,,M,139.00,6,620,,,,
+MD-H05-L,MD-H05,,,,,L,139.00,6,620,,,,
+MD-H05-XL,MD-H05,,,,,XL,139.00,3,620,,,,
+MD-H06-S,MD-H06,Chemise Oxford,,"La chemise Oxford à col boutonné, celle qui se porte avec tout. La toile Oxford, épaisse et légèrement chinée, devient plus douce à chaque lavage.
+
+- Toile Oxford 100 % coton
+- Col boutonné, poche poitrine
+- Pli dos à boîte
+- Coloris bleu ciel
+- Fabriquée au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille M. Coupe droite.
+
+**Entretien :** lavage en machine à 40 °C, repassage à fer chaud.",Taille,S,85.00,5,300,oui,oui,homme|homme-chemises-tshirts,photos/md-h06-1.webp|photos/md-h06-2.webp
+MD-H06-M,MD-H06,,,,,M,85.00,9,300,,,,
+MD-H06-L,MD-H06,,,,,L,85.00,10,300,,,,
+MD-H06-XL,MD-H06,,,,,XL,85.00,6,300,,,,
+MD-H06-XXL,MD-H06,,,,,XXL,85.00,3,300,,,,
+MD-H07-S,MD-H07,Surchemise en velours côtelé,,"Entre la chemise et la veste, une surchemise en velours côtelé épais, à porter ouverte sur un t-shirt ou fermée sur un pull fin.
+
+- Velours 100 % coton, 8 côtes
+- Deux poches poitrine à rabat
+- Boutons en corozo
+- Coloris tabac
+- Fabriquée au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,86 m et porte une taille M. Coupe droite, à porter en couche.
+
+**Entretien :** lavage en machine à 30 °C sur l’envers.",Taille,S,129.00,2,650,oui,oui,homme|homme-chemises-tshirts,photos/md-h07-1.webp|photos/md-h07-2.webp
+MD-H07-M,MD-H07,,,,,M,129.00,5,650,,,,
+MD-H07-L,MD-H07,,,,,L,129.00,5,650,,,,
+MD-H07-XL,MD-H07,,,,,XL,129.00,3,650,,,,
+MD-H08-S,MD-H08,Polo en maille de coton,,"Un polo en maille de coton fine, au col ouvert sans boutons. Plus habillé qu’un t-shirt, plus léger qu’une chemise.
+
+- 100 % coton égyptien, maille piquée fine
+- Col ouvert en côte
+- Coloris marine
+- Tricoté en Italie
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille M. Coupe ajustée.
+
+**Entretien :** lavage en machine à 30 °C, séchage à plat.",Taille,S,89.00,3,300,oui,oui,homme|homme-chemises-tshirts,photos/md-h08-1.webp|photos/md-h08-2.webp
+MD-H08-M,MD-H08,,,,,M,89.00,6,300,,,,
+MD-H08-L,MD-H08,,,,,L,89.00,7,300,,,,
+MD-H08-XL,MD-H08,,,,,XL,89.00,4,300,,,,
+MD-H08-XXL,MD-H08,,,,,XXL,89.00,2,300,,,,
+MD-H09-S,MD-H09,T-shirt col rond en coton bio,,"Un t-shirt noir, simplement, mais bien fait : jersey épais, col rond qui ne se détend pas, coutures latérales qui ne vrillent pas au lavage.
+
+- Jersey 100 % coton biologique, 200 g/m²
+- Col rond en côte 1/1
+- Coloris noir
+- Fabriqué au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille M. Coupe droite.
+
+**Entretien :** lavage en machine à 30 °C sur l’envers.",Taille,S,39.00,10,220,oui,oui,homme|homme-chemises-tshirts,photos/md-h09-1.webp|photos/md-h09-2.webp
+MD-H09-M,MD-H09,,,,,M,39.00,15,220,,,,
+MD-H09-L,MD-H09,,,,,L,39.00,18,220,,,,
+MD-H09-XL,MD-H09,,,,,XL,39.00,12,220,,,,
+MD-H09-XXL,MD-H09,,,,,XXL,39.00,6,220,,,,
+MD-H10-38,MD-H10,Chino en sergé de coton,,"Le chino droit, légèrement fuselé, dans un sergé de coton qui tient le pli. Taille mi-haute, poches italiennes, ourlet à la bonne longueur.
+
+- Sergé 98 % coton, 2 % élasthanne
+- Fermeture boutons
+- Coloris beige
+- Fabriqué au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille 40. Coupe droite, légèrement fuselée.
+
+**Entretien :** lavage en machine à 30 °C.",Taille,38,99.00,4,600,oui,oui,homme|homme-pantalons-jeans,photos/md-h10-1.webp|photos/md-h10-2.webp
+MD-H10-40,MD-H10,,,,,40,99.00,8,600,,,,
+MD-H10-42,MD-H10,,,,,42,99.00,9,600,,,,
+MD-H10-44,MD-H10,,,,,44,99.00,6,600,,,,
+MD-H10-46,MD-H10,,,,,46,99.00,3,600,,,,
+MD-H11-38,MD-H11,Jean selvedge coupe droite,,"Un jean brut à lisière, tissé sur métiers à navette, qui raconte votre histoire à mesure que vous le portez. Coupe droite, taille mi-haute.
+
+- Denim selvedge 100 % coton, 14 oz, tissé au Japon
+- Brut, non lavé
+- Rivets cuivre, boutons métal
+- Fabriqué au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,86 m et porte une taille 40. Prévoyez un rétrécissement d’environ 2 % au premier lavage.
+
+**Entretien :** attendez six mois avant le premier lavage, puis lavez à froid sur l’envers.",Taille,38,139.00,3,750,oui,oui,homme|homme-pantalons-jeans,photos/md-h11-1.webp|photos/md-h11-2.webp
+MD-H11-40,MD-H11,,,,,40,139.00,7,750,,,,
+MD-H11-42,MD-H11,,,,,42,139.00,8,750,,,,
+MD-H11-44,MD-H11,,,,,44,139.00,5,750,,,,
+MD-H11-46,MD-H11,,,,,46,139.00,2,750,,,,
+MD-H12-38,MD-H12,Pantalon en flanelle de laine,,"Un pantalon de flanelle grise, à une pince, qui habille sans rigidité. À porter avec une veste comme avec un simple pull col rond.
+
+- Flanelle 100 % laine, tissée en Italie
+- Une pince, poches italiennes, taille à pattes de serrage
+- Coloris gris moyen
+- Fabriqué au Portugal
+
+**Taille et coupe :** le mannequin mesure 1,85 m et porte une taille 40. Coupe droite, légèrement fuselée.
+
+**Entretien :** nettoyage à sec.",Taille,38,145.00,2,580,oui,oui,homme|homme-pantalons-jeans,photos/md-h12-1.webp|photos/md-h12-2.webp
+MD-H12-40,MD-H12,,,,,40,145.00,5,580,,,,
+MD-H12-42,MD-H12,,,,,42,145.00,6,580,,,,
+MD-H12-44,MD-H12,,,,,44,145.00,4,580,,,,
+MD-H12-46,MD-H12,,,,,46,145.00,2,580,,,,
+MD-C01-36,MD-C01,Mocassins en cuir glacé,,"Des mocassins à plateau, en cuir de veau glacé au brillant profond. La semelle en gomme crantée apporte un peu de hauteur et beaucoup de confort.
+
+- Tige en cuir de veau glacé
+- Doublure en cuir de chèvre
+- Semelle en gomme, hauteur 3 cm
+- Coloris noir
+- Fabriqués en Italie
+
+**Pointure :** chaussant normal, prenez votre pointure habituelle.
+
+**Entretien :** cirage noir et brosse douce.",Taille,36,225.00,2,900,oui,oui,chaussures|chaussures-femme|femme,photos/md-c01-1.webp|photos/md-c01-2.webp
+MD-C01-37,MD-C01,,,,,37,225.00,4,900,,,,
+MD-C01-38,MD-C01,,,,,38,225.00,5,900,,,,
+MD-C01-39,MD-C01,,,,,39,225.00,5,900,,,,
+MD-C01-40,MD-C01,,,,,40,225.00,3,900,,,,
+MD-C01-41,MD-C01,,,,,41,225.00,1,900,,,,
+MD-C02-36,MD-C02,Bottes hautes en cuir,,"Des bottes hautes au tube droit et souple, sur un talon bottier de 6 cm. Le cuir nappa, très fin, épouse la jambe sans la serrer.
+
+- Tige en cuir nappa de veau
+- Doublure en cuir
+- Fermeture à glissière intérieure
+- Talon de 6 cm, semelle en cuir patinée
+- Coloris noir
+- Fabriquées en Espagne
+
+**Pointure :** chaussant normal. Tour de mollet : 36 cm en pointure 38.
+
+**Entretien :** crème nourrissante incolore, embauchoirs à bottes conseillés.",Taille,36,349.00,1,1500,oui,oui,chaussures|chaussures-femme|femme,photos/md-c02-1.webp|photos/md-c02-2.webp
+MD-C02-37,MD-C02,,,,,37,349.00,3,1500,,,,
+MD-C02-38,MD-C02,,,,,38,349.00,4,1500,,,,
+MD-C02-39,MD-C02,,,,,39,349.00,4,1500,,,,
+MD-C02-40,MD-C02,,,,,40,349.00,2,1500,,,,
+MD-C02-41,MD-C02,,,,,41,349.00,1,1500,,,,
+MD-C03-36,MD-C03,Escarpins en daim à talon carré,,"Des escarpins à bout carré et talon bottier de 5 cm, en daim bordeaux. Assez confortables pour la journée, assez élégants pour le soir.
+
+- Tige en cuir velours de veau
+- Doublure en cuir
+- Talon carré de 5 cm, semelle en cuir
+- Coloris bordeaux
+- Fabriqués en Italie
+
+**Pointure :** chaussant légèrement étroit, prenez une demi-pointure au-dessus si vous avez le pied large.
+
+**Entretien :** brosse à daim et imperméabilisant.",Taille,36,195.00,2,700,oui,oui,chaussures|chaussures-femme|femme,photos/md-c03-1.webp|photos/md-c03-2.webp
+MD-C03-37,MD-C03,,,,,37,195.00,3,700,,,,
+MD-C03-38,MD-C03,,,,,38,195.00,4,700,,,,
+MD-C03-39,MD-C03,,,,,39,195.00,3,700,,,,
+MD-C03-40,MD-C03,,,,,40,195.00,2,700,,,,
+MD-C03-41,MD-C03,,,,,41,195.00,1,700,,,,
+MD-C04-36,MD-C04,Ballerines en cuir nappa,,"Des ballerines souples comme des chaussons, à bout légèrement arrondi et petit nœud. Le cuir nappa, très fin, se fait oublier dès le premier jour.
+
+- Tige en cuir nappa d’agneau
+- Doublure en cuir, semelle intérieure rembourrée
+- Semelle en cuir avec patin en gomme
+- Coloris noir
+- Fabriquées en France
+
+**Pointure :** chaussant normal.
+
+**Entretien :** crème nourrissante incolore.",Taille,36,165.00,3,450,oui,oui,chaussures|chaussures-femme|femme,photos/md-c04-1.webp|photos/md-c04-2.webp
+MD-C04-37,MD-C04,,,,,37,165.00,5,450,,,,
+MD-C04-38,MD-C04,,,,,38,165.00,6,450,,,,
+MD-C04-39,MD-C04,,,,,39,165.00,5,450,,,,
+MD-C04-40,MD-C04,,,,,40,165.00,3,450,,,,
+MD-C04-41,MD-C04,,,,,41,165.00,2,450,,,,
+MD-C05-36,MD-C05,Baskets basses en cuir,,"Des baskets basses minimalistes en cuir blanc pleine fleur, sans logo, montées sur une semelle cousue. Elles se portent avec un costume comme avec un jean.
+
+- Tige en cuir de veau pleine fleur
+- Doublure en cuir
+- Semelle en gomme naturelle cousue Margom
+- Coloris blanc
+- Fabriquées au Portugal
+
+**Pointure :** chaussant légèrement grand, prenez une demi-pointure en dessous.
+
+**Entretien :** nettoyez avec un chiffon humide et une crème nourrissante blanche.",Taille,36,149.00,2,1000,oui,oui,chaussures|chaussures-femme|chaussures-homme,photos/md-c05-1.webp|photos/md-c05-2.webp
+MD-C05-37,MD-C05,,,,,37,149.00,4,1000,,,,
+MD-C05-38,MD-C05,,,,,38,149.00,5,1000,,,,
+MD-C05-39,MD-C05,,,,,39,149.00,6,1000,,,,
+MD-C05-40,MD-C05,,,,,40,149.00,5,1000,,,,
+MD-C05-41,MD-C05,,,,,41,149.00,4,1000,,,,
+MD-C05-42,MD-C05,,,,,42,149.00,5,1000,,,,
+MD-C05-43,MD-C05,,,,,43,149.00,4,1000,,,,
+MD-C05-44,MD-C05,,,,,44,149.00,3,1000,,,,
+MD-C05-45,MD-C05,,,,,45,149.00,2,1000,,,,
+MD-C06-40,MD-C06,Bottines Chelsea en daim,,"La Chelsea boot dans sa version la plus sobre : un daim marron souple, des élastiques latéraux, une tirette au talon et une semelle en gomme crantée pour l’hiver.
+
+- Tige en cuir velours de veau, traité hydrofuge
+- Doublure en cuir
+- Semelle en gomme Vibram, montage Goodyear
+- Coloris marron tabac
+- Fabriquées en Espagne
+
+**Pointure :** chaussant normal.
+
+**Entretien :** brosse à daim et imperméabilisant avant le premier porter.",Taille,40,249.00,2,1300,oui,oui,chaussures|chaussures-homme|homme,photos/md-c06-1.webp|photos/md-c06-2.webp
+MD-C06-41,MD-C06,,,,,41,249.00,4,1300,,,,
+MD-C06-42,MD-C06,,,,,42,249.00,5,1300,,,,
+MD-C06-43,MD-C06,,,,,43,249.00,5,1300,,,,
+MD-C06-44,MD-C06,,,,,44,249.00,3,1300,,,,
+MD-C06-45,MD-C06,,,,,45,249.00,1,1300,,,,
+MD-C07-40,MD-C07,Derbies en cuir grainé,,"Des derbies en cuir grainé, à la ligne ronde et franche, montées Goodyear pour être ressemelées. Une chaussure de ville qui ne craint pas la pluie.
+
+- Tige en cuir de veau grainé
+- Doublure en cuir
+- Semelle en gomme Dainite, montage Goodyear
+- Coloris marron foncé
+- Fabriquées en Espagne
+
+**Pointure :** chaussant normal.
+
+**Entretien :** cirage marron et embauchoirs en cèdre conseillés.",Taille,40,239.00,1,1250,oui,oui,chaussures|chaussures-homme|homme,photos/md-c07-1.webp|photos/md-c07-2.webp
+MD-C07-41,MD-C07,,,,,41,239.00,3,1250,,,,
+MD-C07-42,MD-C07,,,,,42,239.00,4,1250,,,,
+MD-C07-43,MD-C07,,,,,43,239.00,4,1250,,,,
+MD-C07-44,MD-C07,,,,,44,239.00,3,1250,,,,
+MD-C07-45,MD-C07,,,,,45,239.00,1,1250,,,,
+MD-C08-40,MD-C08,Baskets basses en daim,,"Une basket basse en daim gris et cuir, inspirée des modèles d’entraînement des années soixante-dix. Légère, souple, faite pour marcher.
+
+- Tige en cuir velours et cuir lisse
+- Doublure en textile respirant
+- Semelle en gomme naturelle
+- Coloris gris
+- Fabriquées au Portugal
+
+**Pointure :** chaussant normal.
+
+**Entretien :** brosse à daim et imperméabilisant.",Taille,40,159.00,2,950,oui,oui,chaussures|chaussures-homme|homme,photos/md-c08-1.webp|photos/md-c08-2.webp
+MD-C08-41,MD-C08,,,,,41,159.00,4,950,,,,
+MD-C08-42,MD-C08,,,,,42,159.00,6,950,,,,
+MD-C08-43,MD-C08,,,,,43,159.00,5,950,,,,
+MD-C08-44,MD-C08,,,,,44,159.00,3,950,,,,
+MD-C08-45,MD-C08,,,,,45,159.00,2,950,,,,
+MD-A01,,Sac cabas en cuir,,"Un grand cabas en cuir pleine fleur, assez profond pour un ordinateur de 14 pouces, assez souple pour se plier dans une valise. Une poche intérieure zippée garde l’essentiel à portée de main.
+
+- Cuir de vachette pleine fleur, tannage végétal
+- Poche intérieure zippée
+- Anses portées épaule, hauteur 24 cm
+- Dimensions : 40 × 32 × 14 cm
+- Coloris cognac
+- Fabriqué en Espagne
+
+**Entretien :** le tannage végétal fonce et se patine avec le temps. Nourrissez le cuir deux fois par an.",,,289.00,3,1100,oui,oui,accessoires|sacs,photos/md-a01-1.webp|photos/md-a01-2.webp
+MD-A02,,Sac besace en cuir grainé,,"Une besace compacte en cuir grainé, à rabat aimanté et bandoulière réglable. Elle se porte à l’épaule ou en travers du corps, de jour comme de soir.
+
+- Cuir de vachette grainé
+- Rabat à fermeture aimantée, poche plaquée au dos
+- Bandoulière réglable et amovible
+- Dimensions : 24 × 18 × 8 cm
+- Coloris noir
+- Fabriqué en Espagne
+
+**Entretien :** essuyez avec un chiffon doux, crème nourrissante incolore.",,,249.00,6,800,oui,oui,accessoires|sacs,photos/md-a02-1.webp|photos/md-a02-2.webp
+MD-A03,,Sac week-end en toile et cuir,,"Un sac de voyage en toile de coton épaisse renforcée de cuir, au format cabine. Fond plat, deux anses et une bandoulière : il suffit pour deux jours loin de Paris.
+
+- Toile 100 % coton cirée, 18 oz
+- Garnitures en cuir de vachette, attaches en laiton
+- Bandoulière amovible
+- Dimensions : 50 × 28 × 25 cm, format cabine
+- Coloris olive et cognac
+- Fabriqué au Portugal
+
+**Entretien :** brossez la toile à sec ; ravivez la cire une fois par an.",,,229.00,4,1400,oui,oui,accessoires|sacs,photos/md-a03-1.webp|photos/md-a03-2.webp
+MD-A04,,Porte-cartes en cuir,,"Un porte-cartes plat à quatre fentes et une poche centrale, qui se glisse dans n’importe quelle poche de veste. Tranches teintées et lustrées à la main.
+
+- Cuir de vachette pleine fleur, tannage végétal
+- Quatre fentes, une poche centrale
+- Dimensions : 10 × 7,5 cm
+- Coloris cognac
+- Fabriqué en France
+
+**Entretien :** le cuir fonce et se patine avec le temps.",,,55.00,18,120,oui,oui,accessoires|petite-maroquinerie,photos/md-a04-1.webp|photos/md-a04-2.webp
+MD-A05-80,MD-A05,Ceinture en cuir,,"Une ceinture de 3 cm de large, en cuir épais coupé d’une seule pièce, avec une boucle en laiton massif. Elle se porte avec un jean comme avec un pantalon de flanelle.
+
+- Cuir de vachette pleine fleur, 3,5 mm d’épaisseur
+- Boucle en laiton massif
+- Largeur 3 cm
+- Coloris marron foncé
+- Fabriquée en France
+
+**Taille :** choisissez votre tour de taille en centimètres ; la taille indiquée correspond au trou central.
+
+**Entretien :** crème nourrissante incolore.",Tour de taille (cm),80,79.00,3,250,oui,oui,accessoires|petite-maroquinerie,photos/md-a05-1.webp|photos/md-a05-2.webp
+MD-A05-85,MD-A05,,,,,85,79.00,6,250,,,,
+MD-A05-90,MD-A05,,,,,90,79.00,7,250,,,,
+MD-A05-95,MD-A05,,,,,95,79.00,6,250,,,,
+MD-A05-100,MD-A05,,,,,100,79.00,3,250,,,,
+MD-A06-S,MD-A06,Gants en cuir doublés cachemire,,"Des gants en cuir d’agneau, fins et souples, doublés de cachemire. Coupés et cousus à la main par un gantier de Millau.
+
+- Cuir d’agneau plongé
+- Doublure 100 % cachemire
+- Coloris noir
+- Fabriqués en France, à Millau
+
+**Taille :** S pour un tour de main de 18 à 19 cm, M de 19 à 21 cm, L de 21 à 23 cm.
+
+**Entretien :** évitez l’eau ; laissez sécher à température ambiante s’ils sont mouillés.",Taille,S,89.00,4,150,oui,oui,accessoires|petite-maroquinerie,photos/md-a06-1.webp|photos/md-a06-2.webp
+MD-A06-M,MD-A06,,,,,M,89.00,6,150,,,,
+MD-A06-L,MD-A06,,,,,L,89.00,3,150,,,,
+MD-A07,,Écharpe en laine et cachemire,,"Une grande écharpe tissée en laine et cachemire, légère mais très chaude, aux franges courtes. Elle se noue de mille façons, ou se pose simplement sur les épaules.
+
+- 70 % laine, 30 % cachemire
+- Tissage sergé, finition brossée
+- Dimensions : 190 × 45 cm
+- Coloris camel
+- Tissée en Écosse
+
+**Entretien :** lavage à la main à l’eau froide ou nettoyage à sec.",,,95.00,14,280,oui,oui,accessoires|echarpes-bonnets,photos/md-a07-1.webp|photos/md-a07-2.webp
+MD-A08,,Bonnet en laine côtelée,,"Un bonnet à revers en maille côtelée de laine mérinos, ni trop fin ni trop épais. Il garde sa forme, et vos oreilles au chaud.
+
+- 100 % laine mérinos
+- Maille côtes 2/2, revers
+- Taille unique
+- Coloris écru
+- Tricoté en France
+
+**Entretien :** lavage à la main à l’eau froide, séchage à plat.",,,49.00,20,120,oui,oui,accessoires|echarpes-bonnets,photos/md-a08-1.webp|photos/md-a08-2.webp
+MD-A09,,Foulard en soie imprimé,,"Un carré de soie au motif de feuillages, imprimé en Italie et roulotté à la main. À nouer au cou, dans les cheveux ou à l’anse d’un sac.
+
+- 100 % soie twill, 16 mommes
+- Impression en Italie, bords roulottés main
+- Dimensions : 70 × 70 cm
+- Coloris bleu, ocre et écru
+- Fabriqué en Italie
+
+**Entretien :** nettoyage à sec.",,,110.00,8,80,oui,oui,accessoires|echarpes-bonnets,photos/md-a09-1.webp|photos/md-a09-2.webp
+MD-A10,,Lunettes de soleil en acétate,,"Une monture ronde et épaisse en acétate écaille, aux verres teintés vert bouteille. Charnières à cinq barillets, étui en cuir fourni.
+
+- Monture en acétate de cellulose
+- Verres minéraux, protection UV 400, catégorie 3
+- Étui en cuir et chiffon microfibre fournis
+- Coloris écaille
+- Fabriquées en France, dans le Jura
+
+**Entretien :** nettoyez les verres avec le chiffon fourni, rangez-les dans leur étui.",,,145.00,5,120,oui,oui,accessoires|lunettes,photos/md-a10-1.webp|photos/md-a10-2.webp

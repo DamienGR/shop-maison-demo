@@ -1,36 +1,123 @@
 ---
-import type { StorefrontShellModel } from '../../features/storefront/models';
+import type { StorefrontLink, StorefrontShellModel } from '../../features/storefront/models';
 import { t } from '../../features/i18n';
 
 /**
- * STORE-OWNED. Edit freely — this file belongs to your store.
+ * Maison Démo — le pied de page.
  *
- * Footer links come from the merchant's navigation menu, already filtered to
- * targets that are actually publishable, so nothing here can render a dead
- * link. Like the header, this renders on every page.
+ * Deux temps. D'abord les engagements de la maison, sur fond blanc, parce
+ * qu'ils répondent aux questions qu'on se pose juste avant de commander. Puis
+ * le bloc bleu : les liens du menu marchand, rangés en colonnes, et la marque
+ * en très grand — c'est la signature de la boutique, la seule chose qui ait le
+ * droit d'être spectaculaire.
+ *
+ * Les liens viennent du menu « footer » de l'administration, déjà filtrés sur
+ * des cibles publiées. Ils sont seulement répartis en colonnes selon leur
+ * destination : les rayons, les pages légales, et le reste.
  */
 interface Props {
   model: StorefrontShellModel;
 }
 
 const { model } = Astro.props;
+
+const isShop = (link: StorefrontLink) =>
+  link.href === '/' || link.href.startsWith('/products') || link.href.startsWith('/categories/');
+const isLegal = (link: StorefrontLink) =>
+  /^\/pages\/(conditions-generales|mentions-legales|politique-de-confidentialite|droit-de-retractation|cookies)/.test(link.href);
+
+const groups = [
+  { title: 'Boutique', links: model.footerLinks.filter(isShop) },
+  { title: 'La maison', links: model.footerLinks.filter((l) => !isShop(l) && !isLegal(l)) },
+  { title: 'Informations légales', links: model.footerLinks.filter(isLegal) },
+].filter((group) => group.links.length > 0);
+
+const promises = [
+  {
+    title: 'Livraison offerte dès 150 €',
+    text: 'Colissimo suivi, livré en 48 à 72 h ouvrées.',
+    icon: 'M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z',
+  },
+  {
+    title: 'Retours gratuits sous 30 jours',
+    text: 'Échange ou remboursement, sans justification.',
+    icon: 'M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4',
+  },
+  {
+    title: 'Paiement sécurisé',
+    text: 'Transactions chiffrées, aucune donnée bancaire conservée.',
+    icon: 'M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3',
+  },
+  {
+    title: 'Fabriqué en Europe',
+    text: 'Dans des ateliers au Portugal, en Italie, en Espagne et en France.',
+    icon: 'M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18M3.5 9h17M3.5 15h17M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Z',
+  },
+];
+
+const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-line">
-  <div
-    class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-6 py-10 text-xs uppercase tracking-widest text-muted"
-  >
-    <span>&copy; {model.storeName}</span>
-    {
-      model.footerLinks.length > 0 && (
-        <nav aria-label={t('shell.nav.footer')} class="flex flex-wrap items-center gap-x-6 gap-y-3">
-          {model.footerLinks.map((link) => (
-            <a href={link.href} class="hover:text-brand">
-              {link.text}
-            </a>
-          ))}
-        </nav>
-      )
-    }
+<footer class="mt-24">
+  <section aria-label="Nos engagements" class="border-t border-line">
+    <ul class="mx-auto grid max-w-[var(--page-max)] grid-cols-1 gap-x-8 gap-y-7 px-[var(--page-pad-x)] py-12 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        promises.map((promise) => (
+          <li class="flex gap-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true" class="mt-0.5 shrink-0 text-brand">
+              <path d={promise.icon} />
+            </svg>
+            <div>
+              <p class="text-[0.875rem] font-semibold text-ink">{promise.title}</p>
+              <p class="mt-1 text-[0.8125rem] leading-relaxed text-muted">{promise.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <div class="bg-brand text-on-brand">
+    <div class="mx-auto max-w-[var(--page-max)] px-[var(--page-pad-x)] pt-16">
+      <div class="grid gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <p class="md-title max-w-xs text-[1.375rem]">Une maison parisienne de prêt-à-porter, pour elle et pour lui.</p>
+          <p class="mt-5 max-w-xs text-[0.875rem] leading-relaxed text-white/80">
+            Notre service client vous répond du lundi au samedi, de 10 h à 19 h.
+          </p>
+        </div>
+        {
+          groups.length > 0 && (
+            <nav aria-label={t('shell.nav.footer')} class="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-8">
+              {groups.map((group) => (
+                <div>
+                  <p class="text-[0.8125rem] font-semibold">{group.title}</p>
+                  <ul class="mt-4 space-y-2.5">
+                    {group.links.map((link) => (
+                      <li>
+                        <a href={link.href} class="text-[0.875rem] text-white/80 transition-colors hover:text-white">
+                          {link.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+          )
+        }
+      </div>
+
+      <div class="md-footer-mark-box mt-20">
+        <p aria-hidden="true" class="md-wordmark md-footer-mark select-none whitespace-nowrap text-center leading-none">
+          {model.storeName}
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2 border-t border-white/25 py-6 text-[0.75rem] text-white/75 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {year} {model.storeName}</p>
+        <p>Boutique de démonstration : aucune commande n’est débitée ni expédiée.</p>
+      </div>
+    </div>
   </div>
 </footer>

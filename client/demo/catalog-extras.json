@@ -1,0 +1,356 @@
+{
+  "products": [
+    {
+      "sku": "MD-F01",
+      "createdDaysAgo": 1,
+      "alts": [
+        "Manteau long en laine et cachemire, porté",
+        "Manteau long en laine et cachemire, détail"
+      ]
+    },
+    {
+      "sku": "MD-F02",
+      "createdDaysAgo": 3,
+      "alts": [
+        "Trench en gabardine de coton, porté",
+        "Trench en gabardine de coton, détail"
+      ]
+    },
+    {
+      "sku": "MD-F03",
+      "createdDaysAgo": 6,
+      "alts": [
+        "Blazer croisé en laine, porté",
+        "Blazer croisé en laine, détail"
+      ]
+    },
+    {
+      "sku": "MD-F04",
+      "createdDaysAgo": 2,
+      "alts": [
+        "Pull col roulé en cachemire, porté",
+        "Pull col roulé en cachemire, détail"
+      ]
+    },
+    {
+      "sku": "MD-F05",
+      "createdDaysAgo": 9,
+      "alts": [
+        "Cardigan en mérinos côtelé, porté",
+        "Cardigan en mérinos côtelé, détail"
+      ]
+    },
+    {
+      "sku": "MD-F06",
+      "createdDaysAgo": 12,
+      "alts": [
+        "Marinière en coton épais, porté",
+        "Marinière en coton épais, autre vue"
+      ]
+    },
+    {
+      "sku": "MD-F07",
+      "createdDaysAgo": 15,
+      "alts": [
+        "Chemise oversize en popeline, porté",
+        "Chemise oversize en popeline, détail"
+      ]
+    },
+    {
+      "sku": "MD-F08",
+      "createdDaysAgo": 5,
+      "alts": [
+        "Blouse en soie lavée, porté",
+        "Blouse en soie lavée, détail"
+      ]
+    },
+    {
+      "sku": "MD-F09",
+      "createdDaysAgo": 4,
+      "alts": [
+        "Robe midi en crêpe, porté",
+        "Robe midi en crêpe, détail"
+      ]
+    },
+    {
+      "sku": "MD-F10",
+      "createdDaysAgo": 20,
+      "alts": [
+        "Robe chemise en lin lavé, porté",
+        "Robe chemise en lin lavé, détail"
+      ]
+    },
+    {
+      "sku": "MD-F11",
+      "createdDaysAgo": 18,
+      "alts": [
+        "Jupe plissée midi, porté",
+        "Jupe plissée midi, détail"
+      ]
+    },
+    {
+      "sku": "MD-F12",
+      "createdDaysAgo": 8,
+      "alts": [
+        "Jean droit taille haute, porté",
+        "Jean droit taille haute, détail"
+      ]
+    },
+    {
+      "sku": "MD-F13",
+      "createdDaysAgo": 7,
+      "alts": [
+        "Pantalon tailleur à pinces, porté",
+        "Pantalon tailleur à pinces, détail"
+      ]
+    },
+    {
+      "sku": "MD-F14",
+      "createdDaysAgo": 25,
+      "alts": [
+        "T-shirt en coton épais, porté",
+        "T-shirt en coton épais, autre vue"
+      ]
+    },
+    {
+      "sku": "MD-H01",
+      "createdDaysAgo": 2,
+      "alts": [
+        "Caban en drap de laine, porté",
+        "Caban en drap de laine, détail"
+      ]
+    },
+    {
+      "sku": "MD-H02",
+      "createdDaysAgo": 10,
+      "alts": [
+        "Veste de travail en coton, porté",
+        "Veste de travail en coton, détail"
+      ]
+    },
+    {
+      "sku": "MD-H03",
+      "createdDaysAgo": 4,
+      "alts": [
+        "Blouson en daim, porté",
+        "Blouson en daim, détail"
+      ]
+    },
+    {
+      "sku": "MD-H04",
+      "createdDaysAgo": 3,
+      "alts": [
+        "Pull col rond en laine d’agneau, porté",
+        "Pull col rond en laine d’agneau, autre vue"
+      ]
+    },
+    {
+      "sku": "MD-H05",
+      "createdDaysAgo": 11,
+      "alts": [
+        "Pull camionneur zippé, porté",
+        "Pull camionneur zippé, détail"
+      ]
+    },
+    {
+      "sku": "MD-H06",
+      "createdDaysAgo": 14,
+      "alts": [
+        "Chemise Oxford, porté",
+        "Chemise Oxford, détail"
+      ]
+    },
+    {
+      "sku": "MD-H07",
+      "createdDaysAgo": 6,
+      "alts": [
+        "Surchemise en velours côtelé, porté",
+        "Surchemise en velours côtelé, détail"
+      ]
+    },
+    {
+      "sku": "MD-H08",
+      "createdDaysAgo": 22,
+      "alts": [
+        "Polo en maille de coton, porté",
+        "Polo en maille de coton, autre vue"
+      ]
+    },
+    {
+      "sku": "MD-H09",
+      "createdDaysAgo": 28,
+      "alts": [
+        "T-shirt col rond en coton bio, porté",
+        "T-shirt col rond en coton bio, autre vue"
+      ]
+    },
+    {
+      "sku": "MD-H10",
+      "createdDaysAgo": 16,
+      "alts": [
+        "Chino en sergé de coton, porté",
+        "Chino en sergé de coton, détail"
+      ]
+    },
+    {
+      "sku": "MD-H11",
+      "createdDaysAgo": 9,
+      "alts": [
+        "Jean selvedge coupe droite, porté",
+        "Jean selvedge coupe droite, détail"
+      ]
+    },
+    {
+      "sku": "MD-H12",
+      "createdDaysAgo": 13,
+      "alts": [
+        "Pantalon en flanelle de laine, porté",
+        "Pantalon en flanelle de laine, détail"
+      ]
+    },
+    {
+      "sku": "MD-C01",
+      "createdDaysAgo": 5,
+      "alts": [
+        "Mocassins en cuir glacé, photographie produit",
+        "Mocassins en cuir glacé, porté"
+      ]
+    },
+    {
+      "sku": "MD-C02",
+      "createdDaysAgo": 1,
+      "alts": [
+        "Bottes hautes en cuir, photographie produit",
+        "Bottes hautes en cuir, porté"
+      ]
+    },
+    {
+      "sku": "MD-C03",
+      "createdDaysAgo": 12,
+      "alts": [
+        "Escarpins en daim à talon carré, photographie produit",
+        "Escarpins en daim à talon carré, porté"
+      ]
+    },
+    {
+      "sku": "MD-C04",
+      "createdDaysAgo": 19,
+      "alts": [
+        "Ballerines en cuir nappa, photographie produit",
+        "Ballerines en cuir nappa, porté"
+      ]
+    },
+    {
+      "sku": "MD-C05",
+      "createdDaysAgo": 6,
+      "alts": [
+        "Baskets basses en cuir, photographie produit",
+        "Baskets basses en cuir, porté"
+      ]
+    },
+    {
+      "sku": "MD-C06",
+      "createdDaysAgo": 3,
+      "alts": [
+        "Bottines Chelsea en daim, photographie produit",
+        "Bottines Chelsea en daim, porté"
+      ]
+    },
+    {
+      "sku": "MD-C07",
+      "createdDaysAgo": 15,
+      "alts": [
+        "Derbies en cuir grainé, photographie produit",
+        "Derbies en cuir grainé, porté"
+      ]
+    },
+    {
+      "sku": "MD-C08",
+      "createdDaysAgo": 21,
+      "alts": [
+        "Baskets basses en daim, photographie produit",
+        "Baskets basses en daim, porté"
+      ]
+    },
+    {
+      "sku": "MD-A01",
+      "createdDaysAgo": 2,
+      "alts": [
+        "Sac cabas en cuir, photographie produit",
+        "Sac cabas en cuir, porté"
+      ]
+    },
+    {
+      "sku": "MD-A02",
+      "createdDaysAgo": 8,
+      "alts": [
+        "Sac besace en cuir grainé, photographie produit",
+        "Sac besace en cuir grainé, porté"
+      ]
+    },
+    {
+      "sku": "MD-A03",
+      "createdDaysAgo": 17,
+      "alts": [
+        "Sac week-end en toile et cuir, photographie produit",
+        "Sac week-end en toile et cuir, porté"
+      ]
+    },
+    {
+      "sku": "MD-A04",
+      "createdDaysAgo": 24,
+      "alts": [
+        "Porte-cartes en cuir, photographie produit",
+        "Porte-cartes en cuir, détail"
+      ]
+    },
+    {
+      "sku": "MD-A05",
+      "createdDaysAgo": 26,
+      "alts": [
+        "Ceinture en cuir, photographie produit",
+        "Ceinture en cuir, détail"
+      ]
+    },
+    {
+      "sku": "MD-A06",
+      "createdDaysAgo": 10,
+      "alts": [
+        "Gants en cuir doublés cachemire, photographie produit",
+        "Gants en cuir doublés cachemire, détail"
+      ]
+    },
+    {
+      "sku": "MD-A07",
+      "createdDaysAgo": 4,
+      "alts": [
+        "Écharpe en laine et cachemire, photographie produit",
+        "Écharpe en laine et cachemire, porté"
+      ]
+    },
+    {
+      "sku": "MD-A08",
+      "createdDaysAgo": 7,
+      "alts": [
+        "Bonnet en laine côtelée, photographie produit",
+        "Bonnet en laine côtelée, détail"
+      ]
+    },
+    {
+      "sku": "MD-A09",
+      "createdDaysAgo": 13,
+      "alts": [
+        "Foulard en soie imprimé, photographie produit",
+        "Foulard en soie imprimé, porté"
+      ]
+    },
+    {
+      "sku": "MD-A10",
+      "createdDaysAgo": 11,
+      "alts": [
+        "Lunettes de soleil en acétate, photographie produit",
+        "Lunettes de soleil en acétate, autre vue"
+      ]
+    }
+  ]
+}
