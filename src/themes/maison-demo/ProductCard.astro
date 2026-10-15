@@ -4,49 +4,47 @@ import StoreImage from '../../features/storefront/controls/StoreImage.astro';
 import { t } from '../../features/i18n';
 
 /**
- * STORE-OWNED. Edit freely — this file belongs to your store, and upstream will
- * not rewrite it. It renders every product card on the storefront: catalog,
- * category, search, and recommendations.
+ * Maison Démo — une silhouette, son nom, son prix.
  *
- * The contract, in full:
- *   - `card` is a ProductCardModel. Its URLs, price string, and availability
- *     are already resolved; do not recompute them.
- *   - Render the image through <StoreImage>. It owns responsive attributes and
- *     LCP behavior; copying its markup to change spacing loses both.
- *   - `card.inStock` is a boolean on purpose. Exact stock counts are private.
+ * Les photographies sont en pied, au format 2:3 : la vignette le respecte au
+ * lieu de rogner la tête ou les chaussures. Dessous, le nom et le prix sur deux
+ * lignes courtes, sans ornement ; la photographie fait tout le travail.
  *
- * See CUSTOMIZING.md for the full store-owned surface.
+ * Une seule ancre pour toute la carte, pour ne pas faire tabuler deux fois. Le
+ * prix arrive formaté, la disponibilité est un booléen : rien ne se recalcule
+ * ici.
  */
 interface Props {
   card: ProductCardModel;
-  /** Stagger index for the page-load reveal (capped at 8 steps). */
   index?: number;
-  /** Heading level for the card title, so cards nested under a section heading
-   *  keep the document outline correct. */
   headingLevel?: 'h2' | 'h3';
 }
 
-const { card, index = 0, headingLevel = 'h2' } = Astro.props;
+const { card, headingLevel = 'h2' } = Astro.props;
 const Heading = headingLevel;
 ---
 
-<li class="reveal group" style={`animation-delay:${Math.min(index, 8) * 60}ms`}>
+<li class="group min-w-0">
   <a href={card.href} class="block">
-    <div class="relative overflow-hidden rounded-md bg-surface">
+    <div class="relative overflow-hidden bg-surface">
       <StoreImage
         image={card.image}
         fade
-        class={`aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]${card.inStock ? '' : ' opacity-60'}`}
+        class={`aspect-[2/3] w-full object-cover transition-opacity duration-300 group-hover:opacity-90${card.inStock ? '' : ' opacity-60'}`}
       />
       {
         !card.inStock && (
-          <span class="absolute left-3 top-3 rounded-full bg-surface/90 px-2.5 py-0.5 text-xs uppercase tracking-widest text-muted ring-1 ring-line">
+          <span class="absolute left-3 top-3 bg-paper px-2 py-1 text-[0.72rem] font-medium text-ink">
             {t('product.soldOut')}
           </span>
         )
       }
     </div>
-    <Heading class="mt-4 text-sm font-medium tracking-tight">{card.name}</Heading>
-    <p class="mt-1 text-sm tabular-nums text-muted">{card.formattedPrice}</p>
+    <div class="mt-3 flex flex-col gap-0.5 pr-2">
+      <Heading class="text-[0.875rem] font-medium leading-snug text-ink decoration-1 underline-offset-4 group-hover:underline">
+        {card.name}
+      </Heading>
+      <span class="text-[0.875rem] tabular-nums text-muted">{card.formattedPrice}</span>
+    </div>
   </a>
 </li>

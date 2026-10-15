@@ -1,84 +1,566 @@
 /*
- * ── Brand theming surface ────────────────────────────────────────────────
- * THIS is the file to edit when you rebrand a clone — colors, fonts, radii.
- * Upstream (the template) keeps structural CSS in global.css and doesn't touch
- * this file, so your theme never conflicts when you pull updates.
+ * ── Maison Démo : la craie, l'encre et le bleu ───────────────────────────
  *
- * Tailwind v4 turns each --color-* into utilities (bg-brand, text-accent, …)
- * and uses --font-sans / --radius-* as global defaults. See README → Theming.
+ * Une maison de prêt-à-porter parisienne, femme et homme. Ce sont les
+ * photographies qui portent la couleur des collections (camel, marine, gris
+ * flanelle, écru) ; la page reste donc blanche, pour que les matières se lisent
+ * juste, et ne s'autorise qu'un seul accent : un bleu Klein franc, réservé à la
+ * marque et à ce qui se clique.
+ *
+ * Une seule famille, Archivo, servie depuis la boutique (licence OFL, voir
+ * public/fonts/OFL-Archivo.txt). Son axe de chasse fait tout le travail : la
+ * marque et les grands titres en version étendue, le texte courant en chasse
+ * normale. Le contraste naît de la largeur et de la taille, pas d'un second
+ * caractère.
  */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-wdth-normal.woff2') format('woff2-variations'),
+    url('/fonts/archivo-latin-wdth-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin-wdth-italic.woff2') format('woff2-variations'),
+    url('/fonts/archivo-latin-wdth-italic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
-  /* Primary brand — solid buttons, primary actions, focus ring */
-  --color-brand: #111827;        /* swap for your brand color */
-  --color-brand-hover: #374151;  /* hover shade of the above */
+  /* Bleu Klein. 9,4:1 sur le blanc : un lien de texte comme un bouton plein. */
+  --color-brand: #1f3aa8;
+  --color-brand-hover: #162c85;
+  /* Encre bleutée plutôt que noir : elle tient la page sans la durcir. */
+  --color-ink: #1b1f2a;
+  --color-accent: #1f3aa8;
 
-  /* Body text. Tokenized alongside --color-paper: a theme that changes the page
-     colour must be able to change the text colour with it, and a hardcoded
-     utility on <body> beats anything a theme declares in the base layer. */
-  --color-ink: #111827;
+  --color-paper: #ffffff;
+  /* La pierre : le fond des photographies de studio, repris pour les panneaux,
+     de sorte qu'une vignette et un encart parlent la même langue. */
+  --color-surface: #f2f0ec;
+  --color-line: #dfdbd4;
 
-  /* Accent — text links */
-  --color-accent: #2563eb;
+  /* 6,1:1 et 5,0:1 sur la pierre, la plus sombre des surfaces qu'ils touchent. */
+  --color-muted: #545a66;
+  --color-faint: #5f6571;
 
-  /* Surfaces — warm paper background + hairline rules (editorial minimal) */
-  --color-paper: #faf8f4;
-  --color-line: #e7e2d9;
-
-  /* Raised panels: cards, form wells, the checkout summary. Distinct from
-     `paper` so a panel can sit *on* the page rather than dissolving into it. */
-  --color-surface: #ffffff;
-
-  /* Secondary and tertiary text. Two levels, not one — the storefront leans on
-     the distinction between a supporting line and an incidental one, and
-     collapsing them flattens every summary and product meta block.
-
-     Both clear 4.5:1 on `surface`. `faint` was gray-400 in a dozen places
-     before these became tokens, which is 2.6:1 on white — legible to us,
-     invisible to anyone else. */
-  --color-muted: #4b5563;
-  --color-faint: #6b7280;
-
-  /* Label colour on a `brand` fill. A token rather than a hardcoded white,
-     because a theme is free to pick a light brand — and then white fails
-     contrast on every primary button at once. */
   --color-on-brand: #ffffff;
 
-  /* Typography — sans body + a characterful system serif for display (no webfont) */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif;
-  --font-serif: 'Hoefler Text', 'Iowan Old Style', 'Palatino Linotype', Palatino,
-    Georgia, 'Times New Roman', serif;
+  /* Le cœur nomme « serif » ce qui est en réalité le caractère de titre. Ici,
+     c'est la même famille ; la règle .font-serif plus bas l'élargit. */
+  --font-serif: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
 
-  /* Corner radius (Tailwind defaults, surfaced here for one-place editing) */
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
+  /* Angles vifs : un vêtement se photographie au cordeau. Les champs gardent un
+     souffle de rayon pour ne pas paraître cassés. */
+  --radius-md: 2px;
+  --radius-lg: 0px;
+}
+
+/* Conteneur : large, parce que la grille tient quatre colonnes de silhouettes
+   en pied. La gouttière est lue aussi par l'en-tête et le pied de page, pour
+   que tout tombe sur la même verticale. */
+:root {
+  --page-max: 92rem;
+  --page-pad-x: clamp(1rem, 3.2vw, 2.75rem);
+  --page-pad-y: 2.5rem;
+}
+
+/* Prose des pages de contenu : colonne courte, interligne ouvert. */
+:root {
+  --prose-measure: 42rem;
+  --prose-leading: 1.75;
+  --prose-h1-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  --prose-h1-tracking: -0.025em;
+  --prose-h2-size: 1.5rem;
+  --prose-h2-tracking: -0.015em;
+  --prose-h3-size: 1.125rem;
 }
 
 /*
- * Content-page prose scale.
- *
- * Ordinary custom properties, intentionally OUTSIDE @theme: the core
- * `.markdown-content` rules consume them directly, and they define no Tailwind
- * utility namespace. Moving them into @theme would imply a utility-token role
- * they do not have.
- *
- * Every rule that reads one also carries today's value as its final fallback,
- * so deleting a line here — or replacing this whole file with a design system's
- * tokens — degrades to the current design rather than to browser defaults.
+ * Règles hors couche : elles passent après les utilitaires, ce qui est voulu
+ * pour les quelques ajustements des contrôles du cœur (galerie, choix de la
+ * taille, boutons d'achat). Les sélecteurs s'appuient sur les attributs data-*
+ * que ces contrôles publient, jamais sur leurs classes.
  */
-/* Page container. The default is a centred editorial column. */
-:root {
-  --page-max: 72rem;
-  --page-pad-x: 1.5rem;
-  --page-pad-y: 3rem;
+/* Le tiroir du panier attend hors champ, à droite : sans ce rognage, il
+   ouvrirait un défilement horizontal sur toutes les pages. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-feature-settings: 'kern', 'liga';
+  overflow-x: clip;
 }
 
-:root {
-  --prose-measure: 48rem;
-  --prose-leading: 1.75;
-  --prose-h1-size: 2.25rem;
-  --prose-h1-tracking: -0.02em;
-  --prose-h2-size: 1.5rem;
-  --prose-h2-tracking: -0.01em;
-  --prose-h3-size: 1.125rem;
+/* Titres du cœur (catégorie, recherche, panier) : la version étendue. */
+.font-serif {
+  font-stretch: 112%;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+}
+
+/* La marque, étendue au maximum. */
+.md-wordmark {
+  font-stretch: 125%;
+  font-weight: 640;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.md-display {
+  font-stretch: 118%;
+  font-weight: 560;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+.md-title {
+  font-stretch: 112%;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Pleine largeur depuis l'intérieur du conteneur centré. */
+.md-bleed {
+  margin-inline: calc(50% - 50vw);
+}
+.md-flush-top {
+  margin-top: calc(-1 * var(--page-pad-y));
+}
+
+/* Lien souligné qui s'épaissit au survol. */
+.md-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition: text-decoration-thickness 150ms ease;
+}
+.md-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Boutons de la maison. */
+.md-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+.md-btn-light {
+  background: #fff;
+  color: var(--color-ink);
+}
+.md-btn-light:hover {
+  background: var(--color-brand);
+  color: #fff;
+}
+.md-btn-ghost {
+  border-color: rgb(255 255 255 / 0.85);
+  color: #fff;
+}
+.md-btn-ghost:hover {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+:where(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* ── Galerie produit ─────────────────────────────────────────────────────
+   Les photographies sont en pied, au format 2:3. Le cadre carré du cœur
+   couperait la tête ou les chaussures : on le remplace. Sur grand écran, les
+   vues s'affichent côte à côte et les vignettes de navigation deviennent
+   inutiles. */
+[data-product-hero] [data-hero-track] {
+  border-radius: 0;
+  background: var(--color-surface);
+}
+[data-product-hero] img {
+  aspect-ratio: 2 / 3;
+  height: auto;
+}
+[data-product-hero] > div:last-child:not([data-hero-track]) {
+  gap: 0.5rem;
+}
+[data-product-hero] > div:last-child:not([data-hero-track]) a {
+  border-radius: 0;
+}
+[data-product-hero] > div:last-child:not([data-hero-track]) img {
+  width: 3.5rem;
+  height: 5.25rem;
+}
+@media (min-width: 1024px) {
+  [data-product-hero] [data-hero-track] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.375rem;
+    overflow: visible;
+    background: transparent;
+  }
+  [data-product-hero] [data-hero-track] img {
+    background: var(--color-surface);
+  }
+  [data-product-hero] > div:last-child:not([data-hero-track]) {
+    display: none;
+  }
+}
+
+/* ── Choix de la taille ──────────────────────────────────────────────────
+   Une grille de cases plutôt qu'une liste : c'est la convention du vêtement,
+   et elle tient toutes les tailles sur une ou deux lignes. Le bouton radio
+   reste dans le DOM, transparent et étendu à toute la case, pour garder le
+   clavier, le lecteur d'écran et la validation native. */
+.md-purchase form[data-options-form] {
+  max-width: none;
+  margin-top: 1.75rem;
+}
+.md-purchase fieldset > legend {
+  font-size: 0.8125rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-ink);
+  font-weight: 560;
+  margin-bottom: 0.75rem;
+}
+.md-purchase fieldset > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.25rem, 1fr));
+  gap: 0.375rem;
+}
+.md-purchase fieldset label {
+  position: relative;
+  justify-content: center;
+  min-height: 2.875rem;
+  padding: 0.5rem 0.375rem;
+  border-radius: 0;
+  border-color: var(--color-line);
+  font-size: 0.8125rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.md-purchase fieldset label > span:first-child {
+  gap: 0;
+}
+.md-purchase fieldset label input[type='radio'] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+.md-purchase fieldset label > span.tabular-nums {
+  display: none;
+}
+.md-purchase fieldset label:hover {
+  border-color: var(--color-ink);
+}
+.md-purchase fieldset label:has(input:checked) {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: #fff;
+}
+.md-purchase fieldset label:has(input:focus-visible) {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.md-purchase fieldset label:has(input:disabled) {
+  background: var(--color-surface);
+  border-color: var(--color-surface);
+  color: var(--color-faint);
+  font-size: 0.75rem;
+}
+
+/* ── Boutons d'achat ─────────────────────────────────────────────────────
+   Ajouter au panier est l'action principale, pleine largeur et en bleu ;
+   l'achat express la suit, en contour. */
+.md-purchase form[data-options-form] > div:last-child,
+.md-purchase > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.md-purchase > div > form,
+.md-purchase > div > span {
+  width: 100%;
+}
+.md-purchase button[type='submit'],
+.md-purchase form[data-options-form] > span,
+.md-purchase > div > span {
+  width: 100%;
+  min-height: 3.25rem;
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+.md-purchase button[type='submit']:not([data-fullpage]):not([formaction]) {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #fff;
+}
+.md-purchase button[type='submit']:not([data-fullpage]):not([formaction]):hover {
+  background: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+  color: #fff;
+}
+.md-purchase button[data-fullpage],
+.md-purchase form[method='GET'] button[type='submit'] {
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+}
+.md-purchase button[data-fullpage]:hover,
+.md-purchase form[method='GET'] button[type='submit']:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+.md-purchase form[data-options-form] > span,
+.md-purchase > div > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Pages de contenu ────────────────────────────────────────────────────
+   Les images d'une page Markdown passent en pleine colonne ; deux images sur
+   une même ligne forment un diptyque. */
+.markdown-content {
+  color: #343946;
+}
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  color: var(--color-ink);
+  font-stretch: 112%;
+  font-weight: 560;
+}
+.markdown-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--color-surface);
+}
+.markdown-content p:has(> img) {
+  margin-block: 2rem;
+}
+.markdown-content p:has(> img + img) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.markdown-content p:has(> img) + p > em:only-child {
+  display: block;
+  margin-top: -1.25rem;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+.markdown-content table {
+  width: 100%;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+.markdown-content th {
+  text-align: left;
+  font-weight: 560;
+  background: var(--color-surface);
+}
+.markdown-content blockquote {
+  border-left: 2px solid var(--color-brand);
+  padding-left: 1.25rem;
+  font-size: 1.125rem;
+  color: var(--color-ink);
+}
+
+/* ── En-tête : le menu des petits écrans ─────────────────────────────────
+   Le <details> de <StoreNav> est rendu `static` : son panneau se place donc
+   sous toute la largeur de l'en-tête au lieu de déborder de l'écran. */
+.md-header [data-nav-disclosure] > summary {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.75rem;
+  justify-content: center;
+}
+.md-header [data-nav-disclosure] > div {
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 0;
+  min-width: 0;
+  gap: 0;
+  padding: 0.75rem var(--page-pad-x) 1.5rem;
+  border-width: 0 0 1px;
+  background: var(--color-paper);
+  box-shadow: 0 24px 32px -24px rgb(27 31 42 / 0.25);
+}
+.md-header [data-nav-disclosure] > div > a {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 1.25rem;
+  font-stretch: 112%;
+  font-weight: 540;
+  letter-spacing: -0.015em;
+}
+
+/* ── Pied de page : la marque en très grand ──────────────────────────── */
+/* La taille est mesurée sur la largeur de la colonne (unité cqi) : « Maison
+   Démo » en chasse étendue occupe 9,4 fois son corps, d'où 10,5 cqi pour
+   tenir bord à bord sans jamais déborder. */
+.md-footer-mark-box {
+  container-type: inline-size;
+}
+.md-footer-mark {
+  font-size: 10.5cqi;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin-bottom: -0.08em;
+}
+
+/* ── Fiche produit : accordéons et texte ─────────────────────────────── */
+.md-details > summary::-webkit-details-marker {
+  display: none;
+}
+.md-details-mark {
+  position: relative;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.md-details-mark::before,
+.md-details-mark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 200ms ease;
+}
+.md-details-mark::after {
+  transform: rotate(90deg);
+}
+.md-details[open] .md-details-mark::after {
+  transform: rotate(0deg);
+}
+.md-product-copy {
+  --prose-leading: 1.65;
+  color: var(--color-muted);
+}
+.md-product-copy > :first-child {
+  margin-top: 0;
+}
+.md-product-copy ul {
+  padding-left: 1.1rem;
+}
+.md-product-copy strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ── Pages rendues par le cœur (catégorie, recherche, panier) ────────────
+   Leur gabarit n'appartient pas au thème ; on ne fait qu'aligner leur ton
+   sur la vitrine : pas de petites capitales espacées, quatre colonnes de
+   silhouettes au lieu de trois, et des sous-rayons en étiquettes. */
+.page-shell .uppercase,
+[data-cart-drawer] .uppercase {
+  text-transform: none;
+  letter-spacing: 0.005em;
+}
+/* Le compteur du panier : « Panier (2) », pas « Panier(2) ». */
+[data-cart-count-label] {
+  min-width: 0;
+}
+[data-cart-count-label]:not(:empty) {
+  margin-left: 0.25em;
+}
+.page-shell ul.grid.lg\:grid-cols-3 {
+  column-gap: 0.5rem;
+  row-gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .page-shell ul.grid.lg\:grid-cols-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.page-shell > h1.font-serif {
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  margin-bottom: 1.5rem;
+}
+.page-shell > h1.font-serif + div.flex-wrap {
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.page-shell > h1.font-serif + div.flex-wrap > a {
+  border: 1px solid var(--color-line);
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+.page-shell > h1.font-serif + div.flex-wrap > a:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+.page-shell > nav:first-child {
+  font-size: 0.8125rem;
+}
+
+/* ── Pages de contenu : le titre et les tableaux ───────────────────────
+   base.css est chargé après ce fichier : à spécificité égale, il gagnerait.
+   D'où le double sélecteur .markdown-content.md-page. */
+.markdown-content.md-page img {
+  border-radius: 0;
+}
+.markdown-content.md-page h2,
+.markdown-content.md-page h3 {
+  line-height: 1.2;
+}
+.md-page p > img:only-child {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.md-page {
+  font-size: 1rem;
+}
+.md-page > h1 {
+  font-stretch: 116%;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-details-mark::before,
+  .md-details-mark::after {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-btn,
+  .md-link {
+    transition: none;
+  }
 }

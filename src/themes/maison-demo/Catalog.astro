@@ -1,65 +1,265 @@
 ---
-import type { CatalogPageModel } from '../../features/storefront/models';
+import type { CatalogPageModel, ProductCardModel } from '../../features/storefront/models';
 import ProductCard from './ProductCard.astro';
 import CatalogSort from '../../features/storefront/controls/CatalogSort.astro';
 import CatalogPagination from '../../features/storefront/controls/CatalogPagination.astro';
 import { t } from '../../features/i18n';
 
 /**
- * STORE-OWNED. Edit freely — this file belongs to your store.
+ * Maison Démo — l'accueil et le catalogue.
  *
- * The catalog, rendered at both `/` and `/products`. It performs no queries and
- * parses no query parameters: every product, link, and URL on `model` is
- * already built and bounded.
+ * Le même modèle sert `/` et `/products`. Le chemin courant n'est pas une
+ * donnée du modèle, mais les liens de tri sont construits dessus : leur
+ * préfixe dit donc sur quelle route on est, sans lire la requête.
  *
- * Keep <CatalogSort> and <CatalogPagination>. Their hrefs encode the query
- * semantics the catalog's canonical URLs and caching depend on, and their
- * landmarks and rel hints are what make a paginated series legible to crawlers.
+ * Sur `/`, page 1 et tri par défaut, la page devient une vitrine : la
+ * campagne en pleine largeur, les quatre rayons, les nouveautés, la maison et
+ * une sélection de la collection. Partout ailleurs (`/products`, une autre
+ * page, un autre tri) c'est la liste complète, avec ses contrôles.
  *
- * See CUSTOMIZING.md for the full contract.
+ * <CatalogSort> et <CatalogPagination> gardent leurs liens : ce sont eux qui
+ * décident quelles URL existent, laquelle est canonique, et ce que le cache
+ * conserve.
  */
 interface Props {
   model: CatalogPageModel;
 }
 
 const { model } = Astro.props;
+
+const firstSort = model.sort.options[0];
+const base = firstSort ? firstSort.href.split('?')[0] : '/products';
+const defaultOrder = !firstSort || (firstSort.current && firstSort.direction === 'desc');
+const isShowcase = base === '/' && model.pagination.page === 1 && defaultOrder && model.products.length > 0;
+
+// Une image par rayon de premier niveau ; un rayon sans image garde sa tuile
+// typographique.
+const rayonImages: Record<string, string> = {
+  femme: '/brand/cat-femme',
+  homme: '/brand/cat-homme',
+  chaussures: '/brand/cat-chaussures',
+  accessoires: '/brand/cat-accessoires',
+};
+// Le modèle range les rayons par ordre alphabétique ; la vitrine les présente
+// dans l'ordre d'une boutique : elle, lui, puis ce qui complète la tenue.
+const rayonOrder = Object.keys(rayonImages);
+const rank = (slug: string) => (rayonOrder.includes(slug) ? rayonOrder.indexOf(slug) : rayonOrder.length);
+const rayons = model.categories
+  .map((category) => {
+    const slug = category.href.split('/').pop() ?? '';
+    return { ...category, slug, image: rayonImages[slug] ?? null };
+  })
+  .sort((a, b) => rank(a.slug) - rank(b.slug));
+
+const nouveautes: ProductCardModel[] = model.products.slice(0, 4);
+const selection: ProductCardModel[] = model.products.slice(4, 12);
 ---
 
-<div class="mb-10">
-  <p class="text-xs uppercase tracking-[0.25em] text-muted">{model.eyebrow}</p>
-  <h1 class="mt-2 font-serif text-4xl tracking-tight sm:text-5xl">{model.heading}</h1>
-</div>
-
 {
-  model.categories.length > 0 && (
-    <div class="mb-12 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-widest text-muted">
-      {model.categories.map((category) => (
-        <a
-          href={category.href}
-          class="border-b border-transparent pb-0.5 hover:border-brand hover:text-brand"
-        >
-          {category.text}
+  isShowcase ? (
+    <>
+      {/* ── La campagne ─────────────────────────────────────────────── */}
+      <section class="md-bleed md-flush-top relative isolate h-[min(86svh,54rem)] min-h-[34rem] overflow-hidden bg-surface">
+        <img
+          src="/brand/hero-1536.webp"
+          srcset="/brand/hero-960.webp 960w, /brand/hero-1536.webp 1536w"
+          sizes="100vw"
+          alt="Une femme en manteau camel et un homme en caban marine marchent dans une rue pavée de Paris, un matin d’automne."
+          width="1536"
+          height="1024"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          class="absolute inset-0 -z-10 h-full w-full object-cover object-[68%_center]"
+        />
+        <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(14_17_26/0.6),rgb(14_17_26/0.1)_50%,transparent_72%),linear-gradient(to_right,rgb(14_17_26/0.38),transparent_58%)]" />
+        <div class="mx-auto flex h-full max-w-[var(--page-max)] flex-col justify-end px-[var(--page-pad-x)] pb-12 text-white sm:pb-16">
+          <p class="text-[0.9375rem] font-medium">Collection automne-hiver 2026</p>
+          <h1 class="md-display mt-3 max-w-[13ch] text-[clamp(2.75rem,8.2vw,7.25rem)]">Les matières d’abord</h1>
+          <p class="mt-5 max-w-md text-[1rem] leading-relaxed text-white/90">
+            Laine, cachemire, cuir et denim brut : un vestiaire pensé pour durer, fabriqué en Europe.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/categories/femme" class="md-btn md-btn-light">Collection femme</a>
+            <a href="/categories/homme" class="md-btn md-btn-ghost">Collection homme</a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Les rayons ──────────────────────────────────────────────── */}
+      {rayons.length > 0 && (
+        <nav aria-label={t('catalog.categories.label')} class="mt-14 sm:mt-20">
+          <ul class="grid grid-cols-2 gap-x-2 gap-y-8 lg:grid-cols-4">
+            {rayons.map((rayon) => (
+              <li>
+                <a href={rayon.href} class="group block">
+                  {rayon.image ? (
+                    <div class="overflow-hidden bg-surface">
+                      <img
+                        src={`${rayon.image}-768.webp`}
+                        alt=""
+                        width="768"
+                        height="1024"
+                        loading="lazy"
+                        decoding="async"
+                        class="aspect-[3/4] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                      />
+                    </div>
+                  ) : (
+                    <div class="aspect-[3/4] bg-surface" />
+                  )}
+                  <span class="md-title mt-4 flex items-baseline justify-between gap-3 text-[1.25rem] text-ink sm:text-[1.5rem]">
+                    {rayon.text}
+                    <span class="hidden text-[0.8125rem] font-medium tracking-normal text-muted transition-colors group-hover:text-brand [font-stretch:100%] sm:inline">Découvrir</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {/* ── Les nouveautés ──────────────────────────────────────────── */}
+      <section class="mt-20 sm:mt-28" aria-labelledby="md-nouveautes">
+        <div class="mb-7 flex items-end justify-between gap-6">
+          <h2 id="md-nouveautes" class="md-title text-[clamp(1.75rem,3.2vw,2.5rem)] text-ink">Nouveautés</h2>
+          <a href="/products" class="md-link shrink-0 text-[0.875rem] font-medium text-ink">Toute la collection</a>
+        </div>
+        <ul class="grid grid-cols-2 gap-x-2 gap-y-10 lg:grid-cols-4">
+          {nouveautes.map((card, i) => (
+            <ProductCard card={card} index={i} headingLevel="h3" />
+          ))}
+        </ul>
+      </section>
+
+      {/* ── La maison ───────────────────────────────────────────────── */}
+      <section class="md-bleed mt-24 bg-surface sm:mt-32" aria-labelledby="md-maison">
+        <div class="mx-auto grid max-w-[var(--page-max)] items-center gap-10 px-[var(--page-pad-x)] py-14 md:grid-cols-2 md:gap-16 md:py-20">
+          <img
+            src="/brand/atelier-768.webp"
+            srcset="/brand/atelier-768.webp 768w, /brand/atelier-1024.webp 1024w"
+            sizes="(min-width: 768px) 45vw, 100vw"
+            alt="Les mains d’une couturière guident un drap de laine camel sous le pied d’une machine à coudre."
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full object-cover"
+          />
+          <div class="max-w-lg">
+            <h2 id="md-maison" class="md-title text-[clamp(1.875rem,3.6vw,3rem)] text-ink">Fabriqué en Europe, pensé pour durer</h2>
+            <p class="mt-6 text-[1rem] leading-relaxed text-muted">
+              Chaque pièce est dessinée à Paris, puis confiée à une poignée d’ateliers que nous connaissons par leur nom : un
+              tailleur près de Porto pour les manteaux, une filature écossaise pour le cachemire, un tanneur espagnol pour le
+              cuir. Peu de modèles, renouvelés lentement, et des matières choisies pour bien vieillir.
+            </p>
+            <p class="mt-4 text-[1rem] leading-relaxed text-muted">
+              Nous publions pour chaque vêtement sa composition et son lieu de fabrication, et nous réparons ce qui peut l’être.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+              <a href="/pages/notre-maison" class="md-link text-[0.9375rem] font-medium text-ink">Découvrir la maison</a>
+              <a href="/pages/nos-matieres" class="md-link text-[0.9375rem] font-medium text-ink">Nos matières</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Une sélection ───────────────────────────────────────────── */}
+      {selection.length > 0 && (
+        <section class="mt-24 sm:mt-32" aria-labelledby="md-selection">
+          <div class="mb-7 flex items-end justify-between gap-6">
+            <h2 id="md-selection" class="md-title text-[clamp(1.75rem,3.2vw,2.5rem)] text-ink">Les essentiels de la saison</h2>
+            <a href="/products" class="md-link shrink-0 text-[0.875rem] font-medium text-ink">Tout voir</a>
+          </div>
+          <ul class="grid grid-cols-2 gap-x-2 gap-y-10 lg:grid-cols-4">
+            {selection.map((card, i) => (
+              <ProductCard card={card} index={i + 4} headingLevel="h3" />
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* ── Le lookbook ─────────────────────────────────────────────── */}
+      <section class="mt-24 grid gap-2 sm:mt-32 md:grid-cols-2" aria-labelledby="md-lookbook">
+        <a href="/pages/lookbook" class="group relative block overflow-hidden bg-surface">
+          <img
+            src="/brand/lookbook-3-768.webp"
+            srcset="/brand/lookbook-3-768.webp 768w, /brand/lookbook-3-1024.webp 1024w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            alt="En terrasse à la tombée du jour, une femme porte la robe midi en crêpe noir et l’écharpe camel."
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgb(14_17_26/0.55),transparent)] p-6 pt-24 text-white sm:p-8 sm:pt-32">
+            <h2 id="md-lookbook" class="md-title text-[clamp(1.5rem,2.6vw,2.25rem)]">Le lookbook automne-hiver</h2>
+            <p class="mt-2 text-[0.9375rem] text-white/90">Quatre silhouettes, de la rive gauche aux quais de Seine.</p>
+          </div>
         </a>
-      ))}
-    </div>
+        <a href="/pages/guide-des-tailles" class="group relative block overflow-hidden bg-surface">
+          <img
+            src="/brand/lookbook-2-768.webp"
+            srcset="/brand/lookbook-2-768.webp 768w, /brand/lookbook-2-1024.webp 1024w"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            alt="Assis sur les marches d’un immeuble parisien, un homme porte le blouson en daim tabac et un jean brut."
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgb(14_17_26/0.55),transparent)] p-6 pt-24 text-white sm:p-8 sm:pt-32">
+            <p class="md-title text-[clamp(1.5rem,2.6vw,2.25rem)]">Trouver sa taille</p>
+            <p class="mt-2 text-[0.9375rem] text-white/90">Nos mesures, vêtement par vêtement, et les conseils de nos vendeurs.</p>
+          </div>
+        </a>
+      </section>
+    </>
+  ) : (
+    <>
+      <header class="pt-2">
+        <h1 class="md-title text-[clamp(2.25rem,5vw,3.75rem)] text-ink">{model.heading}</h1>
+      </header>
+
+      <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 border-y border-line py-4">
+        {model.categories.length > 0 && (
+          <nav aria-label={t('catalog.categories.label')} class="flex min-w-0 flex-wrap gap-2">
+            {model.categories.map((category) => (
+              <a
+                href={category.href}
+                class="border border-line px-4 py-2 text-[0.8125rem] font-medium text-ink transition-colors hover:border-ink"
+              >
+                {category.text}
+              </a>
+            ))}
+          </nav>
+        )}
+        <CatalogSort
+          model={model.sort}
+          class="ml-auto flex flex-wrap items-baseline gap-x-5 gap-y-2 text-[0.8125rem] text-muted [&_a:hover]:text-ink [&_a[aria-current]]:text-ink [&_a[aria-current]]:underline [&_a[aria-current]]:underline-offset-4"
+        />
+      </div>
+
+      {model.products.length === 0 && (
+        <p role="status" class="py-24 text-center text-[1.125rem] text-muted">
+          {t('catalog.empty.default')}
+        </p>
+      )}
+
+      {model.products.length > 0 && (
+        <ul class="grid grid-cols-2 gap-x-2 gap-y-10 pt-8 sm:gap-y-12 lg:grid-cols-4">
+          {model.products.map((card, i) => (
+            <ProductCard card={card} index={i} />
+          ))}
+        </ul>
+      )}
+
+      <CatalogPagination
+        model={model.pagination}
+        class="mt-16 flex items-center justify-center gap-5 border-t border-line pt-10 text-[0.875rem] text-muted"
+      />
+    </>
   )
 }
-
-<CatalogSort model={model.sort} />
-
-{
-  /* role="status" is the contract, not the wording: an empty catalog must
-     announce itself to assistive technology rather than rendering a blank
-     grid. Reword it freely; keep the role and keep it non-empty. */
-  model.products.length === 0 && (
-    <p role="status" class="text-muted">
-      {t('catalog.empty.default')}
-    </p>
-  )
-}
-
-<ul class="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-3">
-  {model.products.map((card, i) => <ProductCard card={card} index={i} />)}
-</ul>
-
-<CatalogPagination model={model.pagination} />
