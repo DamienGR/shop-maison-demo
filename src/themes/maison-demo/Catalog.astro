@@ -51,6 +51,9 @@ const rayons = model.categories
   })
   .sort((a, b) => rank(a.slug) - rank(b.slug));
 
+// Les noms de produits restent des h2 jusque dans la vitrine : c'est le repère
+// que la porte navigateur du socle sonde sur `/` (main ul li h2) pour relever
+// la signature du design.
 const nouveautes: ProductCardModel[] = model.products.slice(0, 4);
 const selection: ProductCardModel[] = model.products.slice(4, 12);
 ---
@@ -127,7 +130,7 @@ const selection: ProductCardModel[] = model.products.slice(4, 12);
         </div>
         <ul class="grid grid-cols-2 gap-x-2 gap-y-10 lg:grid-cols-4">
           {nouveautes.map((card, i) => (
-            <ProductCard card={card} index={i} headingLevel="h3" />
+            <ProductCard card={card} index={i} />
           ))}
         </ul>
       </section>
@@ -173,7 +176,7 @@ const selection: ProductCardModel[] = model.products.slice(4, 12);
           </div>
           <ul class="grid grid-cols-2 gap-x-2 gap-y-10 lg:grid-cols-4">
             {selection.map((card, i) => (
-              <ProductCard card={card} index={i + 4} headingLevel="h3" />
+              <ProductCard card={card} index={i + 4} />
             ))}
           </ul>
         </section>
