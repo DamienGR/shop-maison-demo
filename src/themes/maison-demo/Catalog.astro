@@ -63,6 +63,8 @@ const selection: ProductCardModel[] = model.products.slice(4, 12);
     <>
       {/* ── La campagne ─────────────────────────────────────────────── */}
       <section class="md-bleed md-flush-top relative isolate h-[min(86svh,54rem)] min-h-[34rem] overflow-hidden bg-surface">
+        {/* Les visages sont dans le haut de la photo : sur un écran large et
+            peu haut, le recadrage vertical sacrifie les pieds, pas les têtes. */}
         <img
           src="/brand/hero-1536.webp"
           srcset="/brand/hero-960.webp 960w, /brand/hero-1536.webp 1536w"
@@ -73,7 +75,7 @@ const selection: ProductCardModel[] = model.products.slice(4, 12);
           fetchpriority="high"
           loading="eager"
           decoding="async"
-          class="absolute inset-0 -z-10 h-full w-full object-cover object-[68%_center]"
+          class="absolute inset-0 -z-10 h-full w-full object-cover object-[68%_top]"
         />
         <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(14_17_26/0.6),rgb(14_17_26/0.1)_50%,transparent_72%),linear-gradient(to_right,rgb(14_17_26/0.38),transparent_58%)]" />
         <div class="mx-auto flex h-full max-w-[var(--page-max)] flex-col justify-end px-[var(--page-pad-x)] pb-12 text-white sm:pb-16">
